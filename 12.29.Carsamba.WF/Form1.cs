@@ -121,17 +121,17 @@ namespace _12._29.Carsamba.WF
             {
                 txtMalzemeID.Text = malzeme.AvMalzemeID.ToString();
                 txtKiyafetTip.Text = malzeme.KiyafetTipi;
-                txtKiyafetRenk.Text= malzeme.KiyafetRengi;
-                txtSapkaTip.Text=malzeme.SapkaTipi;
-                txtSapkaRenk.Text=malzeme.SapkaRengi;
-                txtKemerTip.Text=malzeme.EkipmanKemerTipi;
-                txtKemerRenk.Text=malzeme.EkipmanKemerRengi;
-                txtBotTip.Text=malzeme.BotTipi;
-                txtBotRenk.Text=malzeme.BotRengi;
-                txtDurbunBoyut.Text=malzeme.DurbunBoyutu;
-                txtCantaBoyut.Text=malzeme.CantaBoyutu;
-                txtCantaRenk.Text=malzeme.CantaRengi;
-                txtMalzemeFiyat.Text=malzeme.MalzemeFiyat.ToString();
+                txtKiyafetRenk.Text = malzeme.KiyafetRengi;
+                txtSapkaTip.Text = malzeme.SapkaTipi;
+                txtSapkaRenk.Text = malzeme.SapkaRengi;
+                txtKemerTip.Text = malzeme.EkipmanKemerTipi;
+                txtKemerRenk.Text = malzeme.EkipmanKemerRengi;
+                txtBotTip.Text = malzeme.BotTipi;
+                txtBotRenk.Text = malzeme.BotRengi;
+                txtDurbunBoyut.Text = malzeme.DurbunBoyutu;
+                txtCantaBoyut.Text = malzeme.CantaBoyutu;
+                txtCantaRenk.Text = malzeme.CantaRengi;
+                txtMalzemeFiyat.Text = malzeme.MalzemeFiyat.ToString();
 
                 pnlMalzeme.Enabled = true;
             }
@@ -143,7 +143,7 @@ namespace _12._29.Carsamba.WF
             }
         }
 
-        
+
 
         private void btnMalzemeEkle_Click(object sender, EventArgs e)
         {
@@ -165,7 +165,7 @@ namespace _12._29.Carsamba.WF
 
             MalzemeTemizle();
 
-            
+
         }
 
         private void btnMalzemeSil_Click(object sender, EventArgs e)
