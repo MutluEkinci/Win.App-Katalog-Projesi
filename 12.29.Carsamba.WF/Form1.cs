@@ -294,13 +294,13 @@ namespace _12._29.Carsamba.WF
             {
                 MessageBox.Show("Aradığınız kayıt bulunamadı.");
                 EkipmanTemizle();
-                
+
             }
         }
 
         private void btnEkipmanEkle_Click(object sender, EventArgs e)
         {
-            ekipman.AvTuru =cmbBoxAvTuru.Text;
+            ekipman.AvTuru = cmbBoxAvTuru.Text;
             ekipman.AvSilahID = int.Parse(txtEkipmanSilahID.Text);
             ekipman.AvSilahFiyat = Convert.ToDecimal(txtEkipmanSilahFiyat.Text);
             ekipman.AvMalzemeID = int.Parse(txtEkipmanMalzemeID.Text);
@@ -313,7 +313,14 @@ namespace _12._29.Carsamba.WF
 
         private void btnEkipmanSil_Click(object sender, EventArgs e)
         {
+            dr = MessageBox.Show("Emin Misiniz?", "UYARI!", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                ekipman.AvEkipmanID = int.Parse(txtEkipmanID.Text);
+                Avcilik.AvEkipmanlari.EkipmanSil(ekipman);
 
+                pnlEkipman.Enabled = true;
+            }
         }
 
         private void btnEkipmanGuncelle_Click(object sender, EventArgs e)
