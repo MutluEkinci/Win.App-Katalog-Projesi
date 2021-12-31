@@ -50,7 +50,7 @@ namespace _12._29.Carsamba.WF.DBManager
             return avsilah;
         }
 
-        public void SilahEkle(AvSilah silah)
+        public string SilahEkle(AvSilah silah)
         {
             conn = new SqlConnection(connstr);
             conn.Open();
@@ -58,6 +58,7 @@ namespace _12._29.Carsamba.WF.DBManager
 
             cmd.CommandType = CommandType.StoredProcedure;
 
+            cmd.Parameters.Add("@yeniID", SqlDbType.Int);
             cmd.Parameters.AddWithValue("@silahtip", silah.SilahTipi);
             cmd.Parameters.AddWithValue("@Silahad", silah.SilahAdi);
             cmd.Parameters.AddWithValue("@atismod", silah.SilahAtisModu);
@@ -66,9 +67,13 @@ namespace _12._29.Carsamba.WF.DBManager
             cmd.Parameters.AddWithValue("@silahrenk", silah.SilahRengi);
             cmd.Parameters.AddWithValue("@fiyat", silah.SilahFiyat);
 
+            cmd.Parameters[0].Direction = ParameterDirection.ReturnValue;
+
 
             cmd.ExecuteNonQuery();
             conn.Close();
+
+            return cmd.Parameters[0].Value.ToString();
 
         }
 
@@ -114,37 +119,46 @@ namespace _12._29.Carsamba.WF.DBManager
 
         public void SilahListele(DataGridView dgvSilah)
         {
-            AvSilah a = new AvSilah();
             conn = new SqlConnection(connstr);
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("select*from avsilah order by avsilahıd", conn);
 
-            SqlDataReader dr = cmd.ExecuteReader();
+            SqlDataAdapter da = new SqlDataAdapter("select*from avsilah", connstr);
 
             DataTable dt = new DataTable();
-
-            dgvSilah.ColumnCount = dr.FieldCount;
-
-            object[] veriler = new object[dr.FieldCount];
-
-            for (int i = 0; i < dr.FieldCount; i++)
-            {
-                dgvSilah.Columns[i].Name = dr.GetName(i);
-            }
-
-
-
-            while (dr.Read())
-            {
-                for (int i = 0; i < dr.FieldCount; i++)
-                {
-                    veriler[i] = dr[i];
-                }
-                dgvSilah.Rows.Add(veriler);
-            }
-            conn.Close();
-
+            da.Fill(dt);
+            dgvSilah.DataSource = dt;
             
+            //conn.Open();
+
+
+            //SqlCommand cmd = new SqlCommand("select*from avsilah order by avsilahıd", conn);
+
+            //SqlDataReader dr = cmd.ExecuteReader();
+
+            //DataTable dt = new DataTable();
+            //;
+
+            //dgvSilah.ColumnCount = dr.FieldCount;
+
+            //object[] veriler = new object[dr.FieldCount];
+
+            //for (int i = 0; i < dr.FieldCount; i++)
+            //{
+            //    dgvSilah.Columns[i].Name = dr.GetName(i);
+            //}
+
+
+
+            //while (dr.Read())
+            //{
+            //    for (int i = 0; i < dr.FieldCount; i++)
+            //    {
+            //        veriler[i] = dr[i];
+            //    }
+            //    dgvSilah.Rows.Add(veriler);
+            //}
+            //conn.Close();
+
+
         }
     }
 }

@@ -123,36 +123,11 @@ namespace _12._29.Carsamba.WF.DBManager
 
         public void MalzemeListele(DataGridView dgvMalzeme)
         {
-            AvMalzeme m = new AvMalzeme();
-
-            conn = new SqlConnection(connstr);
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("select*from avmalzeme order by avmalzemeID", conn);
-
-            SqlDataReader dr = cmd.ExecuteReader();
+            SqlDataAdapter da = new SqlDataAdapter("select*from avmalzeme", connstr);
 
             DataTable dt = new DataTable();
-
-            dgvMalzeme.ColumnCount = dr.FieldCount;
-
-            object[] veriler = new object[dr.FieldCount];
-
-            for (int i = 0; i < dr.FieldCount; i++)
-            {
-                dgvMalzeme.Columns[i].Name = dr.GetName(i);
-            }
-
-
-
-            while (dr.Read())
-            {
-                for (int i = 0; i < dr.FieldCount; i++)
-                {
-                    veriler[i] = dr[i];
-                }
-                dgvMalzeme.Rows.Add(veriler);
-            }
-            conn.Close();
+            da.Fill(dt);
+            dgvMalzeme.DataSource = dt;
 
 
         }
