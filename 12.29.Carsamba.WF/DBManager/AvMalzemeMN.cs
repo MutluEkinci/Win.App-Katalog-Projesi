@@ -53,7 +53,7 @@ namespace _12._29.Carsamba.WF.DBManager
             conn.Close();
             return malzeme;
         }
-        public void MalzemeEkle(AvMalzeme malzeme)
+        public string MalzemeEkle(AvMalzeme malzeme)
         {
             conn = new SqlConnection(connstr);
             conn.Open();
@@ -61,6 +61,7 @@ namespace _12._29.Carsamba.WF.DBManager
 
             cmd.CommandType = CommandType.StoredProcedure;
 
+            cmd.Parameters.Add("@yeniID", SqlDbType.Int);
             cmd.Parameters.AddWithValue("@kiyafettipi",malzeme.KiyafetTipi);
             cmd.Parameters.AddWithValue("@kiyafetrengi",malzeme.KiyafetRengi);
             cmd.Parameters.AddWithValue("@sapkatipi",malzeme.SapkaTipi);
@@ -74,8 +75,12 @@ namespace _12._29.Carsamba.WF.DBManager
             cmd.Parameters.AddWithValue("@cantarengi",malzeme.CantaRengi);
             cmd.Parameters.AddWithValue("@fiyat",malzeme.MalzemeFiyat);
 
+            cmd.Parameters[0].Direction = ParameterDirection.ReturnValue;
+
             cmd.ExecuteNonQuery();
             conn.Close();
+
+            return cmd.Parameters[0].Value.ToString();
 
         }
         public void MalzemeSil(AvMalzeme malzeme)

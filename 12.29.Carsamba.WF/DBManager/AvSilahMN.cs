@@ -80,7 +80,6 @@ namespace _12._29.Carsamba.WF.DBManager
         public void SilahSil(AvSilah silah)
         {
             conn = new SqlConnection(connstr);
-
             conn.Open();
 
             string strSQLDelete = "Delete from AvSilah where avsilahıd=@silahID";
@@ -91,7 +90,6 @@ namespace _12._29.Carsamba.WF.DBManager
 
             cmd.ExecuteNonQuery();
             conn.Close();
-
         }
 
         public void SilahGüncelle(AvSilah silah)
@@ -99,9 +97,7 @@ namespace _12._29.Carsamba.WF.DBManager
             conn = new SqlConnection(connstr);
             conn.Open();
 
-            string strSQLUpdate = "";
-
-            strSQLUpdate = "update avsilah set silahtipi=@tip,silahadi=@ad,silahatismodu=@mod,mermitipi=@mermitip,sarjorkapasite=@sarjor,silahrenk=@renk,fiyat=@fiyat where avsilahID=@ID";
+            string strSQLUpdate = "update avsilah set silahtipi=@tip,silahadi=@ad,silahatismodu=@mod,mermitipi=@mermitip,sarjorkapasite=@sarjor,silahrenk=@renk,fiyat=@fiyat where avsilahID=@ID";
             SqlCommand cmd = new SqlCommand(strSQLUpdate, conn);
 
             cmd.Parameters.AddWithValue("@ID", silah.AvSilahID);
@@ -127,38 +123,6 @@ namespace _12._29.Carsamba.WF.DBManager
             da.Fill(dt);
             dgvSilah.DataSource = dt;
             
-            //conn.Open();
-
-
-            //SqlCommand cmd = new SqlCommand("select*from avsilah order by avsilahıd", conn);
-
-            //SqlDataReader dr = cmd.ExecuteReader();
-
-            //DataTable dt = new DataTable();
-            //;
-
-            //dgvSilah.ColumnCount = dr.FieldCount;
-
-            //object[] veriler = new object[dr.FieldCount];
-
-            //for (int i = 0; i < dr.FieldCount; i++)
-            //{
-            //    dgvSilah.Columns[i].Name = dr.GetName(i);
-            //}
-
-
-
-            //while (dr.Read())
-            //{
-            //    for (int i = 0; i < dr.FieldCount; i++)
-            //    {
-            //        veriler[i] = dr[i];
-            //    }
-            //    dgvSilah.Rows.Add(veriler);
-            //}
-            //conn.Close();
-
-
         }
     }
 }
