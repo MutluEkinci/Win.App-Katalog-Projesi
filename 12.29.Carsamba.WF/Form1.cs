@@ -290,11 +290,17 @@ namespace _12._29.Carsamba.WF
         }
         private void MalzemeResimEkle()
         {
+            MessageBox.Show("Kıyafet için resim seçiniz...");
             ofdKiyafet.ShowDialog(lblKiyafetTip);
+            MessageBox.Show("Şapka için resim seçiniz...");
             ofdSapka.ShowDialog();
+            MessageBox.Show("Kemer için resim seçiniz...");
             ofdKemer.ShowDialog();
+            MessageBox.Show("Bot için resim seçiniz...");
             ofdBot.ShowDialog();
+            MessageBox.Show("Dürbün için resim seçiniz...");
             ofdDurbun.ShowDialog();
+            MessageBox.Show("Çanta için resim seçiniz...");
             ofdCanta.ShowDialog();
 
             StreamWriter sw = new StreamWriter("" + malzeme.AvMalzemeID + ".bak");

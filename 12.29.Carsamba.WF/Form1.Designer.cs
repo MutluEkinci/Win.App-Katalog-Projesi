@@ -96,6 +96,8 @@ namespace _12._29.Carsamba.WF
             this.pnlMalzeme = new System.Windows.Forms.Panel();
             this.lblKemerRengi = new System.Windows.Forms.Label();
             this.tabPageEkipman = new System.Windows.Forms.TabPage();
+            this.txtEkipmanMalzemeID = new System.Windows.Forms.TextBox();
+            this.txtEkipmanSilahID = new System.Windows.Forms.TextBox();
             this.cmbBoxAvTuru = new System.Windows.Forms.ComboBox();
             this.dgvEkipmanListe = new System.Windows.Forms.DataGridView();
             this.pnlEkipman = new System.Windows.Forms.Panel();
@@ -122,8 +124,6 @@ namespace _12._29.Carsamba.WF
             this.ofdBot = new System.Windows.Forms.OpenFileDialog();
             this.ofdDurbun = new System.Windows.Forms.OpenFileDialog();
             this.ofdCanta = new System.Windows.Forms.OpenFileDialog();
-            this.txtEkipmanSilahID = new System.Windows.Forms.TextBox();
-            this.txtEkipmanMalzemeID = new System.Windows.Forms.TextBox();
             this.pnlAv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSilahListe)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -643,7 +643,7 @@ namespace _12._29.Carsamba.WF
             // 
             // picBoxSapka
             // 
-            this.picBoxSapka.Location = new System.Drawing.Point(876, 15);
+            this.picBoxSapka.Location = new System.Drawing.Point(885, 11);
             this.picBoxSapka.Name = "picBoxSapka";
             this.picBoxSapka.Size = new System.Drawing.Size(71, 57);
             this.picBoxSapka.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -652,7 +652,7 @@ namespace _12._29.Carsamba.WF
             // 
             // picBoxKemer
             // 
-            this.picBoxKemer.Location = new System.Drawing.Point(953, 15);
+            this.picBoxKemer.Location = new System.Drawing.Point(962, 11);
             this.picBoxKemer.Name = "picBoxKemer";
             this.picBoxKemer.Size = new System.Drawing.Size(71, 57);
             this.picBoxKemer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -661,7 +661,7 @@ namespace _12._29.Carsamba.WF
             // 
             // picBoxKiyafet
             // 
-            this.picBoxKiyafet.Location = new System.Drawing.Point(799, 15);
+            this.picBoxKiyafet.Location = new System.Drawing.Point(808, 11);
             this.picBoxKiyafet.Name = "picBoxKiyafet";
             this.picBoxKiyafet.Size = new System.Drawing.Size(71, 57);
             this.picBoxKiyafet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -670,7 +670,7 @@ namespace _12._29.Carsamba.WF
             // 
             // picBoxDurbun
             // 
-            this.picBoxDurbun.Location = new System.Drawing.Point(876, 78);
+            this.picBoxDurbun.Location = new System.Drawing.Point(885, 74);
             this.picBoxDurbun.Name = "picBoxDurbun";
             this.picBoxDurbun.Size = new System.Drawing.Size(71, 57);
             this.picBoxDurbun.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -679,7 +679,7 @@ namespace _12._29.Carsamba.WF
             // 
             // picBoxCanta
             // 
-            this.picBoxCanta.Location = new System.Drawing.Point(953, 78);
+            this.picBoxCanta.Location = new System.Drawing.Point(962, 74);
             this.picBoxCanta.Name = "picBoxCanta";
             this.picBoxCanta.Size = new System.Drawing.Size(71, 57);
             this.picBoxCanta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -688,7 +688,7 @@ namespace _12._29.Carsamba.WF
             // 
             // picBoxBot
             // 
-            this.picBoxBot.Location = new System.Drawing.Point(799, 78);
+            this.picBoxBot.Location = new System.Drawing.Point(808, 74);
             this.picBoxBot.Name = "picBoxBot";
             this.picBoxBot.Size = new System.Drawing.Size(71, 57);
             this.picBoxBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -907,6 +907,20 @@ namespace _12._29.Carsamba.WF
             this.tabPageEkipman.TabIndex = 2;
             this.tabPageEkipman.Text = "Av Ekipmanları";
             this.tabPageEkipman.UseVisualStyleBackColor = true;
+            // 
+            // txtEkipmanMalzemeID
+            // 
+            this.txtEkipmanMalzemeID.Location = new System.Drawing.Point(326, 7);
+            this.txtEkipmanMalzemeID.Name = "txtEkipmanMalzemeID";
+            this.txtEkipmanMalzemeID.Size = new System.Drawing.Size(128, 20);
+            this.txtEkipmanMalzemeID.TabIndex = 9;
+            // 
+            // txtEkipmanSilahID
+            // 
+            this.txtEkipmanSilahID.Location = new System.Drawing.Point(100, 52);
+            this.txtEkipmanSilahID.Name = "txtEkipmanSilahID";
+            this.txtEkipmanSilahID.Size = new System.Drawing.Size(128, 20);
+            this.txtEkipmanSilahID.TabIndex = 8;
             // 
             // cmbBoxAvTuru
             // 
@@ -1131,20 +1145,6 @@ namespace _12._29.Carsamba.WF
             // ofdCanta
             // 
             this.ofdCanta.FileName = "openFileDialog1";
-            // 
-            // txtEkipmanSilahID
-            // 
-            this.txtEkipmanSilahID.Location = new System.Drawing.Point(100, 52);
-            this.txtEkipmanSilahID.Name = "txtEkipmanSilahID";
-            this.txtEkipmanSilahID.Size = new System.Drawing.Size(128, 20);
-            this.txtEkipmanSilahID.TabIndex = 8;
-            // 
-            // txtEkipmanMalzemeID
-            // 
-            this.txtEkipmanMalzemeID.Location = new System.Drawing.Point(326, 7);
-            this.txtEkipmanMalzemeID.Name = "txtEkipmanMalzemeID";
-            this.txtEkipmanMalzemeID.Size = new System.Drawing.Size(128, 20);
-            this.txtEkipmanMalzemeID.TabIndex = 9;
             // 
             // Form1
             // 
