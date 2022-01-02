@@ -53,13 +53,14 @@ namespace _12._29.Carsamba.WF.DBManager
             conn = new SqlConnection(connstr);
             conn.Open();
 
-            SqlCommand cmd = new SqlCommand("insert into avekipman Values(AvTuru=@tur,AvsilahID=@silahıd,avsilahfiyat=@silahfiyat,AvmalzemeID=@malzemeıd,avmalzemefiyat=@malzemefiyat", conn);
+            SqlCommand cmd = new SqlCommand("insert into avekipman Values(AvTuru=@tur,AvsilahID=@silahID,avsilahfiyat=@silahfiyat,AvmalzemeID=@malzemeID,avmalzemefiyat=@malzemefiyat", conn);
 
             cmd.Parameters.AddWithValue("@tur", ekipman.AvTuru);
-            cmd.Parameters.AddWithValue("@silahıd", ekipman.AvSilahID);
+            cmd.Parameters.AddWithValue("@silahID", ekipman.AvSilahID);
             cmd.Parameters.AddWithValue("@silahfiyat", ekipman.AvSilahFiyat);
-            cmd.Parameters.AddWithValue("malzemeID", ekipman.AvMalzemeID);
+            cmd.Parameters.AddWithValue("@malzemeID", ekipman.AvMalzemeID);
             cmd.Parameters.AddWithValue("@malzemefiyat", ekipman.AvMalzemeFiyat);
+           
 
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -99,9 +100,15 @@ namespace _12._29.Carsamba.WF.DBManager
             cmd.ExecuteNonQuery();
             conn.Close();
         }
-        public List<AvEkipman> EkipmanListele()
+        public void EkipmanListele(DataGridView dgvEkipman)
         {
-            return new List<AvEkipman>();
+            conn = new SqlConnection(connstr);
+
+            SqlDataAdapter da = new SqlDataAdapter("select AvEkipmanID,AvTuru,silah.AvSilahID,SilahAdi,AvSilahFiyat,malzeme.AvMalzemeID,KiyafetTipi,SapkaTipi,EkipmanKemerTipi,BotTipi,DurbunBoyutu,CantaBoyutu,AvMalzemeFiyat,ToplamFiyat from AvSilah silah,AvEkipman ekipman,AvMalzeme malzeme where silah.AvSilahID=ekipman.AvSilahID and ekipman.AvMalzemeID=malzeme.AvMalzemeID", connstr);
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dgvEkipman.DataSource = dt;
         }
 
     }
