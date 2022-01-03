@@ -42,35 +42,45 @@ namespace _12._29.Carsamba.WF
         }
         private void btnSilahAra_Click(object sender, EventArgs e)
         {
-            AvSilah avsilah = Avcilik.AvSilahlari.SilahAra(int.Parse(txtSilahID.Text));
-            if (avsilah.AvSilahID > 0)
+            picboxSilah.ImageLocation = "";
+            if (!(txtSilahID.Text == ""))
             {
-                txtSilahID.Text = avsilah.AvSilahID.ToString();
-                cmbBoxSilahTipi.Text = avsilah.SilahTipi;
-                txtSilahAdi.Text = avsilah.SilahAdi;
-                cmbBoxSilahAtisModu.Text = avsilah.SilahAtisModu;
-                cmbBoxMermitipi.Text = avsilah.MermiTipi;
-                txtSarjorKapasitesi.Text = avsilah.SarjorKapasite.ToString();
-                cmbBoxSilahRengi.Text = avsilah.SilahRengi;
-                txtSilahFiyat.Text = avsilah.SilahFiyat.ToString();
+                avSilah = Avcilik.AvSilahlari.SilahAra(int.Parse(txtSilahID.Text));
 
-                pnlAv.Enabled = true;
-
-                try
+                if (avSilah.AvSilahID > 0)
                 {
-                    StreamReader sr = new StreamReader("" + avsilah.AvSilahID + ".bak");
+                    txtSilahID.Text = avSilah.AvSilahID.ToString();
+                    cmbBoxSilahTipi.Text = avSilah.SilahTipi;
+                    txtSilahAdi.Text = avSilah.SilahAdi;
+                    cmbBoxSilahAtisModu.Text = avSilah.SilahAtisModu;
+                    cmbBoxMermitipi.Text = avSilah.MermiTipi;
+                    txtSarjorKapasitesi.Text = avSilah.SarjorKapasite.ToString();
+                    cmbBoxSilahRengi.Text = avSilah.SilahRengi;
+                    txtSilahFiyat.Text = avSilah.SilahFiyat.ToString();
+
+                    pnlAv.Enabled = true;
+
+
+                    StreamReader sr = new StreamReader("" + avSilah.AvSilahID + ".bak");
                     picboxSilah.ImageLocation = sr.ReadLine();
-                }
-                catch
-                {
-                    MessageBox.Show("Bu silahın resmini güncelleyiniz.");
-                }
 
+                    if (picboxSilah.ImageLocation == "openFileDialog1")
+                    {
+                        MessageBox.Show("Bu silahın resmini güncelleyiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Aradığınız ID değeri bulunamadı!", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    SilahTemizle();
+                }
             }
             else
             {
-                MessageBox.Show("Aradığınız kayıt bulunamadı.");
-
+                MessageBox.Show("Lütfen bir ID değeri giriniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 SilahTemizle();
             }
         }
@@ -91,22 +101,23 @@ namespace _12._29.Carsamba.WF
 
             avSilah.AvSilahID = int.Parse(mesaj);
 
-            MessageBox.Show("Lütfen dosya ismini silahın ID'si olacak şekilde ayarlayınız.");
-
-            MessageBox.Show("Silahın ID'si:" + " " + mesaj);
+            MessageBox.Show("Silahın ID'si:" + " " + mesaj, "ID", MessageBoxButtons.OK, MessageBoxIcon.Information);
             SilahResimEkle();
+
+            MessageBox.Show("Silah başarıyla eklendi.", "BAŞARILI", MessageBoxButtons.OK);
 
             SilahTemizle();
         }
 
         private void btnSilahSil_Click(object sender, EventArgs e)
         {
-            dr = MessageBox.Show("Emin Misiniz?", "UYARI!", MessageBoxButtons.YesNo);
+            dr = MessageBox.Show("Emin Misiniz?", "UYARI!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dr == DialogResult.Yes)
             {
                 avSilah.AvSilahID = int.Parse(txtSilahID.Text);
                 Avcilik.AvSilahlari.SilahSil(avSilah);
                 pnlAv.Enabled = false;
+
             }
         }
         private void btnSilahGuncelle_Click(object sender, EventArgs e)
@@ -120,17 +131,16 @@ namespace _12._29.Carsamba.WF
             avSilah.SilahRengi = cmbBoxSilahRengi.Text;
             avSilah.SilahFiyat = Convert.ToDecimal(txtSilahFiyat.Text);
 
-            dr = MessageBox.Show("Silahın resmini güncellemek istiyor musunuz?", "UYARI", MessageBoxButtons.YesNo);
+            Avcilik.AvSilahlari.SilahGüncelle(avSilah);
+
+            dr = MessageBox.Show("Silahın resmini güncellemek istiyor musunuz?", "UYARI", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (dr == DialogResult.Yes)
             {
-                MessageBox.Show("Lütfen dosya ismini silahın ID'si olacak şekilde ayarlayınız.");
                 SilahResimEkle();
             }
 
-
-            Avcilik.AvSilahlari.SilahGüncelle(avSilah);
-
+            MessageBox.Show("Silah başarıyla güncellenmiştir.", "Başarılı", MessageBoxButtons.OK);
 
             SilahTemizle();
             pnlAv.Enabled = false;
@@ -146,7 +156,7 @@ namespace _12._29.Carsamba.WF
         {
             ofdResimEkle.ShowDialog();
 
-            StreamWriter sw = new StreamWriter("" + avSilah.AvSilahID + ".bak");
+            StreamWriter sw = new StreamWriter("" + avSilah.AvSilahID + ".bak", false);
 
             sw.Write(ofdResimEkle.FileName);
             sw.Close();
@@ -165,29 +175,36 @@ namespace _12._29.Carsamba.WF
 
         private void btnMalzemeAra_Click(object sender, EventArgs e)
         {
+            picBoxKiyafet.ImageLocation = "";
+            picBoxSapka.ImageLocation = "";
+            picBoxKemer.ImageLocation = "";
+            picBoxBot.ImageLocation = "";
+            picBoxDurbun.ImageLocation = "";
+            picBoxCanta.ImageLocation = "";
 
-            AvMalzeme malzeme = Avcilik.AvMalzemeleri.MalzemeAra(int.Parse(txtMalzemeID.Text));
-
-            if (malzeme.AvMalzemeID > 0)
+            if (!(txtMalzemeID.Text == ""))
             {
-                txtMalzemeID.Text = malzeme.AvMalzemeID.ToString();
-                cmbBoxKiyafetTip.Text = malzeme.KiyafetTipi;
-                cmbBoxKiyafetRenk.Text = malzeme.KiyafetRengi;
-                cmbBoxSapkaTip.Text = malzeme.SapkaTipi;
-                cmbBoxSapkaRenk.Text = malzeme.SapkaRengi;
-                cmbBoxKemerTip.Text = malzeme.EkipmanKemerTipi;
-                cmbBoxKemerRenk.Text = malzeme.EkipmanKemerRengi;
-                cmbBoxBotTip.Text = malzeme.BotTipi;
-                cmbBoxBotRenk.Text = malzeme.BotRengi;
-                cmbBoxDurbunBoyut.Text = malzeme.DurbunBoyutu;
-                cmbBoxCantaBoyut.Text = malzeme.CantaBoyutu;
-                cmbBoxCantaRenk.Text = malzeme.CantaRengi;
-                txtMalzemeFiyat.Text = malzeme.MalzemeFiyat.ToString();
+                malzeme = Avcilik.AvMalzemeleri.MalzemeAra(int.Parse(txtMalzemeID.Text));
 
-                pnlMalzeme.Enabled = true;
-
-                try
+                if (malzeme.AvMalzemeID > 0)
                 {
+                    txtMalzemeID.Text = malzeme.AvMalzemeID.ToString();
+                    cmbBoxKiyafetTip.Text = malzeme.KiyafetTipi;
+                    cmbBoxKiyafetRenk.Text = malzeme.KiyafetRengi;
+                    cmbBoxSapkaTip.Text = malzeme.SapkaTipi;
+                    cmbBoxSapkaRenk.Text = malzeme.SapkaRengi;
+                    cmbBoxKemerTip.Text = malzeme.EkipmanKemerTipi;
+                    cmbBoxKemerRenk.Text = malzeme.EkipmanKemerRengi;
+                    cmbBoxBotTip.Text = malzeme.BotTipi;
+                    cmbBoxBotRenk.Text = malzeme.BotRengi;
+                    cmbBoxDurbunBoyut.Text = malzeme.DurbunBoyutu;
+                    cmbBoxCantaBoyut.Text = malzeme.CantaBoyutu;
+                    cmbBoxCantaRenk.Text = malzeme.CantaRengi;
+                    txtMalzemeFiyat.Text = malzeme.MalzemeFiyat.ToString();
+
+                    pnlMalzeme.Enabled = true;
+
+
                     StreamReader sr = new StreamReader("" + malzeme.AvMalzemeID + ".bak");
                     picBoxKiyafet.ImageLocation = sr.ReadLine();
                     picBoxSapka.ImageLocation = sr.ReadLine();
@@ -196,16 +213,21 @@ namespace _12._29.Carsamba.WF
                     picBoxDurbun.ImageLocation = sr.ReadLine();
                     picBoxCanta.ImageLocation = sr.ReadLine();
 
+                    if (picBoxKiyafet.ImageLocation == "openFileDialog1" || picBoxSapka.ImageLocation == "openFileDialog1" || picBoxKemer.ImageLocation == "openFileDialog1" || picBoxBot.ImageLocation == "openFileDialog1" || picBoxDurbun.ImageLocation == "openFileDialog1" || picBoxCanta.ImageLocation == "openFileDialog1")
+                    {
+                        MessageBox.Show("Bu malzemenin resimlerini güncelleyiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                catch
+                else
                 {
-                    MessageBox.Show("Bu malzemenin resmini güncelleyiniz.");
+                    MessageBox.Show("Aradığınız ID değeri bulunamadı!", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    MalzemeTemizle();
                 }
             }
             else
             {
-                MessageBox.Show("Aradığınız kayıt bulunamadı.");
-
+                MessageBox.Show("Lütfen bir ID değeri giriniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 MalzemeTemizle();
             }
         }
@@ -232,17 +254,17 @@ namespace _12._29.Carsamba.WF
 
             malzeme.AvMalzemeID = int.Parse(mesaj);
 
-            MessageBox.Show("Lütfen dosya ismini malzemenin ID'si olacak şekilde ayarlayınız.");
-
-            MessageBox.Show("Malzemenin ID'si:" + " " + mesaj);
+            MessageBox.Show("Malzemenin ID'si:" + " " + mesaj, "ID", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             MalzemeResimEkle();
+
+            MessageBox.Show("Malzemeler başarıyla eklenmiştir.", "Başarılı", MessageBoxButtons.OK);
             MalzemeTemizle();
         }
 
         private void btnMalzemeSil_Click(object sender, EventArgs e)
         {
-            dr = MessageBox.Show("Emin Misiniz?", "UYARI!", MessageBoxButtons.YesNo);
+            dr = MessageBox.Show("Emin Misiniz?", "UYARI!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dr == DialogResult.Yes)
             {
                 malzeme.AvMalzemeID = int.Parse(txtMalzemeID.Text);
@@ -268,17 +290,17 @@ namespace _12._29.Carsamba.WF
             malzeme.CantaRengi = cmbBoxCantaRenk.Text;
             malzeme.MalzemeFiyat = Convert.ToDecimal(txtMalzemeFiyat.Text);
 
-            dr = MessageBox.Show("Malzemenin resmini güncellemek istiyor musunuz?", "UYARI", MessageBoxButtons.YesNo);
+            Avcilik.AvMalzemeleri.MalzemeGüncelle(malzeme);
+
+            dr = MessageBox.Show("Malzemenin resmini güncellemek istiyor musunuz?", "UYARI", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (dr == DialogResult.Yes)
             {
-                MessageBox.Show("Lütfen dosya ismini malzemenin ID'si olacak şekilde ayarlayınız.");
-                MessageBox.Show("Resim sırasını veri girişine uygun olarak seçiniz.");
+                MessageBox.Show("Resim sırasını veri girişine uygun olarak seçiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MalzemeResimEkle();
-
             }
 
-            Avcilik.AvMalzemeleri.MalzemeGüncelle(malzeme);
+            MessageBox.Show("Malzemeler başarıyla güncellenmiştir.", "Başarılı", MessageBoxButtons.OK);
 
             MalzemeTemizle();
             pnlMalzeme.Enabled = true;
@@ -303,7 +325,7 @@ namespace _12._29.Carsamba.WF
             MessageBox.Show("Çanta için resim seçiniz...");
             ofdCanta.ShowDialog();
 
-            StreamWriter sw = new StreamWriter("" + malzeme.AvMalzemeID + ".bak");
+            StreamWriter sw = new StreamWriter("" + malzeme.AvMalzemeID + ".bak", false);
 
             sw.WriteLine(ofdKiyafet.FileName);
             sw.WriteLine(ofdSapka.FileName);
@@ -334,24 +356,33 @@ namespace _12._29.Carsamba.WF
 
         private void btnEkipmanAra_Click(object sender, EventArgs e)
         {
-            AvEkipman ekipman = Avcilik.AvEkipmanlari.EkipmanAra(int.Parse(txtEkipmanID.Text));
-            if (ekipman.AvEkipmanID > 0)
+            if (!(txtEkipmanID.Text == ""))
             {
-                txtEkipmanID.Text = ekipman.AvEkipmanID.ToString();
-                cmbBoxAvTuru.Text = ekipman.AvTuru;
-                txtEkipmanSilahID.Text = ekipman.AvSilahID.ToString();
-                txtEkipmanSilahFiyat.Text = ekipman.AvSilahFiyat.ToString();
-                txtEkipmanMalzemeID.Text = ekipman.AvMalzemeID.ToString();
-                txtEkipmanMalzemeFiyat.Text = ekipman.AvMalzemeFiyat.ToString();
-                txtEkipmanToplamFiyat.Text = ekipman.ToplamFiyat.ToString();
+                ekipman = Avcilik.AvEkipmanlari.EkipmanAra(int.Parse(txtEkipmanID.Text));
 
-                pnlEkipman.Enabled = true;
+                if (ekipman.AvEkipmanID > 0)
+                {
+                    txtEkipmanID.Text = ekipman.AvEkipmanID.ToString();
+                    cmbBoxAvTuru.Text = ekipman.AvTuru;
+                    txtEkipmanSilahID.Text = ekipman.AvSilahID.ToString();
+                    txtEkipmanSilahFiyat.Text = ekipman.AvSilahFiyat.ToString();
+                    txtEkipmanMalzemeID.Text = ekipman.AvMalzemeID.ToString();
+                    txtEkipmanMalzemeFiyat.Text = ekipman.AvMalzemeFiyat.ToString();
+                    txtEkipmanToplamFiyat.Text = ekipman.ToplamFiyat.ToString();
+
+                    pnlEkipman.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Aradığınız ID değeri bulunamadı!", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    EkipmanTemizle();
+
+                }
             }
             else
             {
-                MessageBox.Show("Aradığınız kayıt bulunamadı.");
+                MessageBox.Show("Litfen bir ID değeri giriniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 EkipmanTemizle();
-
             }
         }
 
@@ -365,12 +396,14 @@ namespace _12._29.Carsamba.WF
 
             Avcilik.AvEkipmanlari.EkipmanEkle(ekipman);
 
+            MessageBox.Show("Ekipmanlar başarıyla eklenmiştir.", "Başarılı", MessageBoxButtons.OK);
+
             EkipmanTemizle();
         }
 
         private void btnEkipmanSil_Click(object sender, EventArgs e)
         {
-            dr = MessageBox.Show("Emin Misiniz?", "UYARI!", MessageBoxButtons.YesNo);
+            dr = MessageBox.Show("Emin Misiniz?", "UYARI!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dr == DialogResult.Yes)
             {
                 ekipman.AvEkipmanID = int.Parse(txtEkipmanID.Text);
@@ -386,11 +419,13 @@ namespace _12._29.Carsamba.WF
             ekipman.AvTuru = cmbBoxAvTuru.Text;
             ekipman.AvSilahID = int.Parse(txtEkipmanSilahID.Text);
             ekipman.AvSilahFiyat = Convert.ToDecimal(txtEkipmanSilahFiyat.Text);
-            ekipman.AvMalzemeID = int.Parse(txtEkipmanSilahID.Text);
+            ekipman.AvMalzemeID = int.Parse(txtEkipmanMalzemeID.Text);
             ekipman.AvMalzemeFiyat = Convert.ToDecimal(txtEkipmanMalzemeFiyat.Text);
             ekipman.ToplamFiyat = Convert.ToDecimal(txtEkipmanToplamFiyat.Text);
 
             Avcilik.AvEkipmanlari.EkipmanGüncelle(ekipman);
+
+            MessageBox.Show("Ekipmanlar başarıyla güncellenmiştir.", "Başarılı", MessageBoxButtons.OK);
 
             EkipmanTemizle();
             pnlEkipman.Enabled = false;
@@ -410,6 +445,24 @@ namespace _12._29.Carsamba.WF
             txtEkipmanMalzemeFiyat.Clear();
             txtEkipmanToplamFiyat.Clear();
         }
+
+        private void txtSilahID_Enter(object sender, EventArgs e)
+        {
+            toolTipID.Show("Silah eklerken ID girmenize gerek yoktur.", (IWin32Window)sender);
+        }
+
+        private void txtMalzemeID_Enter(object sender, EventArgs e)
+        {
+            toolTipID.Show("Malzeme eklerken ID girmenize gerek yoktur.", (IWin32Window)sender);
+        }
+
+        private void txtEkipmanID_Enter(object sender, EventArgs e)
+        {
+            toolTipID.Show("Ekipman eklerken ID girmenize gerek yoktur.", (IWin32Window)sender);
+        }
+
+
+
 
         /*List<bolum> bolumler = new List<bolum>() {new bolum{ BolumID=11 , BolumAdi="Muhasebe" }; 
          combobox.datasource=bolumler;

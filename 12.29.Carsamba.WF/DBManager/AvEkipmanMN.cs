@@ -53,13 +53,13 @@ namespace _12._29.Carsamba.WF.DBManager
             conn = new SqlConnection(connstr);
             conn.Open();
 
-            SqlCommand cmd = new SqlCommand("insert into avekipman Values(AvTuru=@tur,AvsilahID=@silahID,avsilahfiyat=@silahfiyat,AvmalzemeID=@malzemeID,avmalzemefiyat=@malzemefiyat", conn);
+            SqlCommand cmd = new SqlCommand("insert into avekipman Values(@avturu,@avsilahID,@avsilahfiyat,@avmalzemeıd,@avmalzemefiyat)", conn);
 
-            cmd.Parameters.AddWithValue("@tur", ekipman.AvTuru);
-            cmd.Parameters.AddWithValue("@silahID", ekipman.AvSilahID);
-            cmd.Parameters.AddWithValue("@silahfiyat", ekipman.AvSilahFiyat);
-            cmd.Parameters.AddWithValue("@malzemeID", ekipman.AvMalzemeID);
-            cmd.Parameters.AddWithValue("@malzemefiyat", ekipman.AvMalzemeFiyat);
+            cmd.Parameters.AddWithValue("@avturu", ekipman.AvTuru);
+            cmd.Parameters.AddWithValue("@avsilahıd", ekipman.AvSilahID);
+            cmd.Parameters.AddWithValue("@avsilahfiyat", ekipman.AvSilahFiyat);
+            cmd.Parameters.AddWithValue("@avmalzemeıd", ekipman.AvMalzemeID);
+            cmd.Parameters.AddWithValue("@avmalzemefiyat", ekipman.AvMalzemeFiyat);
            
 
             cmd.ExecuteNonQuery();
@@ -86,7 +86,7 @@ namespace _12._29.Carsamba.WF.DBManager
             conn = new SqlConnection(connstr);
             conn.Open();
 
-            string strSQLUpdate = "update avekipman set AvTuru=@tur,AvsilahID=@silahıd,avsilahfiyat=@silahfiyat,AvmalzemeID=@malzemeıd,avmalzemefiyat=@malzemefiyat where avekipmanID=@ID";
+            string strSQLUpdate = "update avekipman set AvTuru=@tur,AvsilahID=@silahıd,avsilahfiyat=@silahfiyat,AvmalzemeID=@malzemeID,avmalzemefiyat=@malzemefiyat where avekipmanID=@ID";
 
             SqlCommand cmd = new SqlCommand(strSQLUpdate, conn);
 
@@ -94,7 +94,7 @@ namespace _12._29.Carsamba.WF.DBManager
             cmd.Parameters.AddWithValue("@tur", ekipman.AvTuru);
             cmd.Parameters.AddWithValue("@silahıd", ekipman.AvSilahID);
             cmd.Parameters.AddWithValue("@silahfiyat", ekipman.AvSilahFiyat);
-            cmd.Parameters.AddWithValue("malzemeID", ekipman.AvMalzemeID);
+            cmd.Parameters.AddWithValue("@malzemeID", ekipman.AvMalzemeID);
             cmd.Parameters.AddWithValue("@malzemefiyat", ekipman.AvMalzemeFiyat);
 
             cmd.ExecuteNonQuery();

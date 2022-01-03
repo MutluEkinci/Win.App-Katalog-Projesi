@@ -105,9 +105,10 @@ namespace _12._29.Carsamba.WF.DBManager
 
             string strSQLUpdate = "";
 
-            strSQLUpdate = "update avmalzeme set kiyafettipi=@kiyafettipi,kiyafetrengi=@kiyafetrengi,sapkatipi=@sapkatipi,sapkarengi=@sapkarengi,ekipmankemertipi=@ekipmankemertipi,ekipmankemerrengi=@ekipmankemerrengi,bottipi=@bottipi,botrengi=@botrengi,durbunboyutu=@durbunboyutu,cantaboyutu=@cantaboyutu,cantarengi=@cantarengi,fiyat=@fiyat";
+            strSQLUpdate = "update avmalzeme set kiyafettipi=@kiyafettipi,kiyafetrengi=@kiyafetrengi,sapkatipi=@sapkatipi,sapkarengi=@sapkarengi,ekipmankemertipi=@ekipmankemertipi,ekipmankemerrengi=@ekipmankemerrengi,bottipi=@bottipi,botrengi=@botrengi,durbunboyutu=@durbunboyutu,cantaboyutu=@cantaboyutu,cantarengi=@cantarengi,fiyat=@fiyat where avmalzemeID=@avmalzemeID";
             SqlCommand cmd = new SqlCommand(strSQLUpdate, conn);
 
+            
             cmd.Parameters.AddWithValue("@avmalzemeID", malzeme.AvMalzemeID);
             cmd.Parameters.AddWithValue("@kiyafettipi", malzeme.KiyafetTipi);
             cmd.Parameters.AddWithValue("@kiyafetrengi", malzeme.KiyafetRengi);

@@ -29,6 +29,7 @@ namespace _12._29.Carsamba.WF
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSilahEkle = new System.Windows.Forms.Button();
             this.txtSilahID = new System.Windows.Forms.TextBox();
             this.lblSilahTip = new System.Windows.Forms.Label();
@@ -124,6 +125,7 @@ namespace _12._29.Carsamba.WF
             this.ofdBot = new System.Windows.Forms.OpenFileDialog();
             this.ofdDurbun = new System.Windows.Forms.OpenFileDialog();
             this.ofdCanta = new System.Windows.Forms.OpenFileDialog();
+            this.toolTipID = new System.Windows.Forms.ToolTip(this.components);
             this.pnlAv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSilahListe)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -145,10 +147,10 @@ namespace _12._29.Carsamba.WF
             // 
             // btnSilahEkle
             // 
-            this.btnSilahEkle.Location = new System.Drawing.Point(454, 28);
-            this.btnSilahEkle.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSilahEkle.Location = new System.Drawing.Point(605, 34);
+            this.btnSilahEkle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSilahEkle.Name = "btnSilahEkle";
-            this.btnSilahEkle.Size = new System.Drawing.Size(86, 20);
+            this.btnSilahEkle.Size = new System.Drawing.Size(115, 25);
             this.btnSilahEkle.TabIndex = 2;
             this.btnSilahEkle.Text = "Silah Ekle";
             this.btnSilahEkle.UseVisualStyleBackColor = true;
@@ -156,109 +158,131 @@ namespace _12._29.Carsamba.WF
             // 
             // txtSilahID
             // 
-            this.txtSilahID.Location = new System.Drawing.Point(95, 4);
+            this.txtSilahID.Location = new System.Drawing.Point(127, 5);
+            this.txtSilahID.Margin = new System.Windows.Forms.Padding(4);
             this.txtSilahID.Name = "txtSilahID";
-            this.txtSilahID.Size = new System.Drawing.Size(122, 20);
+            this.txtSilahID.Size = new System.Drawing.Size(161, 22);
             this.txtSilahID.TabIndex = 3;
+            this.txtSilahID.Enter += new System.EventHandler(this.txtSilahID_Enter);
             // 
             // lblSilahTip
             // 
             this.lblSilahTip.AutoSize = true;
-            this.lblSilahTip.Location = new System.Drawing.Point(5, 32);
+            this.lblSilahTip.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSilahTip.Location = new System.Drawing.Point(7, 40);
+            this.lblSilahTip.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSilahTip.Name = "lblSilahTip";
-            this.lblSilahTip.Size = new System.Drawing.Size(53, 13);
+            this.lblSilahTip.Size = new System.Drawing.Size(70, 17);
             this.lblSilahTip.TabIndex = 4;
             this.lblSilahTip.Text = "Silah Tipi:";
             // 
             // lblSilahID
             // 
             this.lblSilahID.AutoSize = true;
-            this.lblSilahID.Location = new System.Drawing.Point(5, 6);
+            this.lblSilahID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSilahID.Location = new System.Drawing.Point(7, 8);
+            this.lblSilahID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSilahID.Name = "lblSilahID";
-            this.lblSilahID.Size = new System.Drawing.Size(47, 13);
+            this.lblSilahID.Size = new System.Drawing.Size(60, 17);
             this.lblSilahID.TabIndex = 4;
             this.lblSilahID.Text = "Silah ID:";
             // 
             // lblSilahAd
             // 
             this.lblSilahAd.AutoSize = true;
-            this.lblSilahAd.Location = new System.Drawing.Point(5, 58);
+            this.lblSilahAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSilahAd.Location = new System.Drawing.Point(7, 72);
+            this.lblSilahAd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSilahAd.Name = "lblSilahAd";
-            this.lblSilahAd.Size = new System.Drawing.Size(51, 13);
+            this.lblSilahAd.Size = new System.Drawing.Size(67, 17);
             this.lblSilahAd.TabIndex = 4;
             this.lblSilahAd.Text = "Silah Adı:";
             // 
             // lblAtisModu
             // 
             this.lblAtisModu.AutoSize = true;
-            this.lblAtisModu.Location = new System.Drawing.Point(5, 84);
+            this.lblAtisModu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAtisModu.Location = new System.Drawing.Point(7, 103);
+            this.lblAtisModu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAtisModu.Name = "lblAtisModu";
-            this.lblAtisModu.Size = new System.Drawing.Size(83, 13);
+            this.lblAtisModu.Size = new System.Drawing.Size(109, 17);
             this.lblAtisModu.TabIndex = 4;
             this.lblAtisModu.Text = "Silah Atış Modu:";
             // 
             // lblMermiTip
             // 
             this.lblMermiTip.AutoSize = true;
-            this.lblMermiTip.Location = new System.Drawing.Point(5, 109);
+            this.lblMermiTip.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMermiTip.Location = new System.Drawing.Point(7, 133);
+            this.lblMermiTip.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMermiTip.Name = "lblMermiTip";
-            this.lblMermiTip.Size = new System.Drawing.Size(58, 13);
+            this.lblMermiTip.Size = new System.Drawing.Size(77, 17);
             this.lblMermiTip.TabIndex = 4;
             this.lblMermiTip.Text = "Mermi Tipi:";
             // 
             // lblSarjorKapasite
             // 
             this.lblSarjorKapasite.AutoSize = true;
-            this.lblSarjorKapasite.Location = new System.Drawing.Point(222, 6);
+            this.lblSarjorKapasite.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSarjorKapasite.Location = new System.Drawing.Point(295, 8);
+            this.lblSarjorKapasite.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSarjorKapasite.Name = "lblSarjorKapasite";
-            this.lblSarjorKapasite.Size = new System.Drawing.Size(88, 13);
+            this.lblSarjorKapasite.Size = new System.Drawing.Size(119, 17);
             this.lblSarjorKapasite.TabIndex = 4;
             this.lblSarjorKapasite.Text = "Şarjör Kapasitesi:";
             // 
             // lblSilahFiyat
             // 
             this.lblSilahFiyat.AutoSize = true;
-            this.lblSilahFiyat.Location = new System.Drawing.Point(222, 58);
+            this.lblSilahFiyat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSilahFiyat.Location = new System.Drawing.Point(295, 73);
+            this.lblSilahFiyat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSilahFiyat.Name = "lblSilahFiyat";
-            this.lblSilahFiyat.Size = new System.Drawing.Size(58, 13);
+            this.lblSilahFiyat.Size = new System.Drawing.Size(77, 17);
             this.lblSilahFiyat.TabIndex = 4;
             this.lblSilahFiyat.Text = "Silah Fiyat:";
             // 
             // lblSilahRenk
             // 
             this.lblSilahRenk.AutoSize = true;
-            this.lblSilahRenk.Location = new System.Drawing.Point(222, 32);
+            this.lblSilahRenk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSilahRenk.Location = new System.Drawing.Point(295, 40);
+            this.lblSilahRenk.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSilahRenk.Name = "lblSilahRenk";
-            this.lblSilahRenk.Size = new System.Drawing.Size(64, 13);
+            this.lblSilahRenk.Size = new System.Drawing.Size(84, 17);
             this.lblSilahRenk.TabIndex = 4;
             this.lblSilahRenk.Text = "Silah Rengi:";
             // 
             // txtSilahAdi
             // 
-            this.txtSilahAdi.Location = new System.Drawing.Point(95, 56);
+            this.txtSilahAdi.Location = new System.Drawing.Point(127, 69);
+            this.txtSilahAdi.Margin = new System.Windows.Forms.Padding(4);
             this.txtSilahAdi.Name = "txtSilahAdi";
-            this.txtSilahAdi.Size = new System.Drawing.Size(122, 20);
+            this.txtSilahAdi.Size = new System.Drawing.Size(161, 22);
             this.txtSilahAdi.TabIndex = 3;
             // 
             // txtSarjorKapasitesi
             // 
-            this.txtSarjorKapasitesi.Location = new System.Drawing.Point(312, 4);
+            this.txtSarjorKapasitesi.Location = new System.Drawing.Point(416, 5);
+            this.txtSarjorKapasitesi.Margin = new System.Windows.Forms.Padding(4);
             this.txtSarjorKapasitesi.Name = "txtSarjorKapasitesi";
-            this.txtSarjorKapasitesi.Size = new System.Drawing.Size(122, 20);
+            this.txtSarjorKapasitesi.Size = new System.Drawing.Size(161, 22);
             this.txtSarjorKapasitesi.TabIndex = 3;
             // 
             // txtSilahFiyat
             // 
-            this.txtSilahFiyat.Location = new System.Drawing.Point(312, 57);
+            this.txtSilahFiyat.Location = new System.Drawing.Point(416, 70);
+            this.txtSilahFiyat.Margin = new System.Windows.Forms.Padding(4);
             this.txtSilahFiyat.Name = "txtSilahFiyat";
-            this.txtSilahFiyat.Size = new System.Drawing.Size(122, 20);
+            this.txtSilahFiyat.Size = new System.Drawing.Size(161, 22);
             this.txtSilahFiyat.TabIndex = 3;
             // 
             // btnSilahSil
             // 
-            this.btnSilahSil.Location = new System.Drawing.Point(2, 0);
+            this.btnSilahSil.Location = new System.Drawing.Point(3, 0);
+            this.btnSilahSil.Margin = new System.Windows.Forms.Padding(4);
             this.btnSilahSil.Name = "btnSilahSil";
-            this.btnSilahSil.Size = new System.Drawing.Size(86, 20);
+            this.btnSilahSil.Size = new System.Drawing.Size(115, 25);
             this.btnSilahSil.TabIndex = 5;
             this.btnSilahSil.Text = "Silah Sil";
             this.btnSilahSil.UseVisualStyleBackColor = true;
@@ -266,9 +290,10 @@ namespace _12._29.Carsamba.WF
             // 
             // btnSilahGuncelle
             // 
-            this.btnSilahGuncelle.Location = new System.Drawing.Point(2, 27);
+            this.btnSilahGuncelle.Location = new System.Drawing.Point(3, 33);
+            this.btnSilahGuncelle.Margin = new System.Windows.Forms.Padding(4);
             this.btnSilahGuncelle.Name = "btnSilahGuncelle";
-            this.btnSilahGuncelle.Size = new System.Drawing.Size(86, 20);
+            this.btnSilahGuncelle.Size = new System.Drawing.Size(115, 25);
             this.btnSilahGuncelle.TabIndex = 6;
             this.btnSilahGuncelle.Text = "Silah Güncelle";
             this.btnSilahGuncelle.UseVisualStyleBackColor = true;
@@ -276,9 +301,10 @@ namespace _12._29.Carsamba.WF
             // 
             // btnSilahListele
             // 
-            this.btnSilahListele.Location = new System.Drawing.Point(454, 106);
+            this.btnSilahListele.Location = new System.Drawing.Point(605, 130);
+            this.btnSilahListele.Margin = new System.Windows.Forms.Padding(4);
             this.btnSilahListele.Name = "btnSilahListele";
-            this.btnSilahListele.Size = new System.Drawing.Size(86, 20);
+            this.btnSilahListele.Size = new System.Drawing.Size(115, 25);
             this.btnSilahListele.TabIndex = 7;
             this.btnSilahListele.Text = "Silahları Listele";
             this.btnSilahListele.UseVisualStyleBackColor = true;
@@ -286,9 +312,10 @@ namespace _12._29.Carsamba.WF
             // 
             // btnSilahAra
             // 
-            this.btnSilahAra.Location = new System.Drawing.Point(454, 3);
+            this.btnSilahAra.Location = new System.Drawing.Point(605, 4);
+            this.btnSilahAra.Margin = new System.Windows.Forms.Padding(4);
             this.btnSilahAra.Name = "btnSilahAra";
-            this.btnSilahAra.Size = new System.Drawing.Size(86, 20);
+            this.btnSilahAra.Size = new System.Drawing.Size(115, 25);
             this.btnSilahAra.TabIndex = 8;
             this.btnSilahAra.Text = "Silah Ara";
             this.btnSilahAra.UseVisualStyleBackColor = true;
@@ -299,138 +326,167 @@ namespace _12._29.Carsamba.WF
             this.pnlAv.Controls.Add(this.btnSilahGuncelle);
             this.pnlAv.Controls.Add(this.btnSilahSil);
             this.pnlAv.Enabled = false;
-            this.pnlAv.Location = new System.Drawing.Point(452, 54);
+            this.pnlAv.Location = new System.Drawing.Point(603, 66);
+            this.pnlAv.Margin = new System.Windows.Forms.Padding(4);
             this.pnlAv.Name = "pnlAv";
-            this.pnlAv.Size = new System.Drawing.Size(92, 47);
+            this.pnlAv.Size = new System.Drawing.Size(123, 58);
             this.pnlAv.TabIndex = 9;
             // 
             // lblMalzemeID
             // 
             this.lblMalzemeID.AutoSize = true;
-            this.lblMalzemeID.Location = new System.Drawing.Point(7, 11);
+            this.lblMalzemeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMalzemeID.Location = new System.Drawing.Point(7, 13);
+            this.lblMalzemeID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMalzemeID.Name = "lblMalzemeID";
-            this.lblMalzemeID.Size = new System.Drawing.Size(82, 13);
+            this.lblMalzemeID.Size = new System.Drawing.Size(105, 17);
             this.lblMalzemeID.TabIndex = 10;
             this.lblMalzemeID.Text = "Av Malzeme ID:";
             // 
             // lblKiyafetTip
             // 
             this.lblKiyafetTip.AutoSize = true;
-            this.lblKiyafetTip.Location = new System.Drawing.Point(7, 37);
+            this.lblKiyafetTip.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblKiyafetTip.Location = new System.Drawing.Point(7, 45);
+            this.lblKiyafetTip.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblKiyafetTip.Name = "lblKiyafetTip";
-            this.lblKiyafetTip.Size = new System.Drawing.Size(62, 13);
+            this.lblKiyafetTip.Size = new System.Drawing.Size(82, 17);
             this.lblKiyafetTip.TabIndex = 10;
             this.lblKiyafetTip.Text = "Kıyafet Tipi:";
             // 
             // lblKiyafetRenk
             // 
             this.lblKiyafetRenk.AutoSize = true;
-            this.lblKiyafetRenk.Location = new System.Drawing.Point(7, 63);
+            this.lblKiyafetRenk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblKiyafetRenk.Location = new System.Drawing.Point(7, 77);
+            this.lblKiyafetRenk.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblKiyafetRenk.Name = "lblKiyafetRenk";
-            this.lblKiyafetRenk.Size = new System.Drawing.Size(73, 13);
+            this.lblKiyafetRenk.Size = new System.Drawing.Size(96, 17);
             this.lblKiyafetRenk.TabIndex = 10;
             this.lblKiyafetRenk.Text = "Kıyafet Rengi:";
             // 
             // lblSapkaTip
             // 
             this.lblSapkaTip.AutoSize = true;
-            this.lblSapkaTip.Location = new System.Drawing.Point(7, 89);
+            this.lblSapkaTip.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSapkaTip.Location = new System.Drawing.Point(7, 109);
+            this.lblSapkaTip.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSapkaTip.Name = "lblSapkaTip";
-            this.lblSapkaTip.Size = new System.Drawing.Size(61, 13);
+            this.lblSapkaTip.Size = new System.Drawing.Size(79, 17);
             this.lblSapkaTip.TabIndex = 10;
             this.lblSapkaTip.Text = "Şapka Tipi:";
             // 
             // lblSapkaRenk
             // 
             this.lblSapkaRenk.AutoSize = true;
-            this.lblSapkaRenk.Location = new System.Drawing.Point(7, 115);
+            this.lblSapkaRenk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSapkaRenk.Location = new System.Drawing.Point(7, 141);
+            this.lblSapkaRenk.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSapkaRenk.Name = "lblSapkaRenk";
-            this.lblSapkaRenk.Size = new System.Drawing.Size(72, 13);
+            this.lblSapkaRenk.Size = new System.Drawing.Size(93, 17);
             this.lblSapkaRenk.TabIndex = 10;
             this.lblSapkaRenk.Text = "Şapka Rengi:";
             // 
             // lblEkipmanKemerTip
             // 
             this.lblEkipmanKemerTip.AutoSize = true;
-            this.lblEkipmanKemerTip.Location = new System.Drawing.Point(218, 11);
+            this.lblEkipmanKemerTip.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblEkipmanKemerTip.Location = new System.Drawing.Point(292, 13);
+            this.lblEkipmanKemerTip.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEkipmanKemerTip.Name = "lblEkipmanKemerTip";
-            this.lblEkipmanKemerTip.Size = new System.Drawing.Size(104, 13);
+            this.lblEkipmanKemerTip.Size = new System.Drawing.Size(138, 17);
             this.lblEkipmanKemerTip.TabIndex = 10;
             this.lblEkipmanKemerTip.Text = "Ekipman Kemer Tipi:";
             // 
             // lblBotTip
             // 
             this.lblBotTip.AutoSize = true;
-            this.lblBotTip.Location = new System.Drawing.Point(218, 61);
+            this.lblBotTip.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBotTip.Location = new System.Drawing.Point(292, 74);
+            this.lblBotTip.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBotTip.Name = "lblBotTip";
-            this.lblBotTip.Size = new System.Drawing.Size(46, 13);
+            this.lblBotTip.Size = new System.Drawing.Size(60, 17);
             this.lblBotTip.TabIndex = 10;
             this.lblBotTip.Text = "Bot Tipi:";
             // 
             // lblBotRenk
             // 
             this.lblBotRenk.AutoSize = true;
-            this.lblBotRenk.Location = new System.Drawing.Point(218, 87);
+            this.lblBotRenk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBotRenk.Location = new System.Drawing.Point(292, 106);
+            this.lblBotRenk.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBotRenk.Name = "lblBotRenk";
-            this.lblBotRenk.Size = new System.Drawing.Size(57, 13);
+            this.lblBotRenk.Size = new System.Drawing.Size(74, 17);
             this.lblBotRenk.TabIndex = 10;
             this.lblBotRenk.Text = "Bot Rengi:";
             // 
             // txtMalzemeID
             // 
-            this.txtMalzemeID.Location = new System.Drawing.Point(92, 8);
+            this.txtMalzemeID.Location = new System.Drawing.Point(123, 10);
+            this.txtMalzemeID.Margin = new System.Windows.Forms.Padding(4);
             this.txtMalzemeID.Name = "txtMalzemeID";
-            this.txtMalzemeID.Size = new System.Drawing.Size(122, 20);
+            this.txtMalzemeID.Size = new System.Drawing.Size(161, 22);
             this.txtMalzemeID.TabIndex = 11;
+            this.txtMalzemeID.Enter += new System.EventHandler(this.txtMalzemeID_Enter);
             // 
             // txtMalzemeFiyat
             // 
-            this.txtMalzemeFiyat.Location = new System.Drawing.Point(561, 60);
+            this.txtMalzemeFiyat.Location = new System.Drawing.Point(729, 74);
+            this.txtMalzemeFiyat.Margin = new System.Windows.Forms.Padding(4);
             this.txtMalzemeFiyat.Name = "txtMalzemeFiyat";
-            this.txtMalzemeFiyat.Size = new System.Drawing.Size(122, 20);
+            this.txtMalzemeFiyat.Size = new System.Drawing.Size(161, 22);
             this.txtMalzemeFiyat.TabIndex = 12;
             // 
             // lblDurbunBoyut
             // 
             this.lblDurbunBoyut.AutoSize = true;
-            this.lblDurbunBoyut.Location = new System.Drawing.Point(218, 113);
+            this.lblDurbunBoyut.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblDurbunBoyut.Location = new System.Drawing.Point(292, 138);
+            this.lblDurbunBoyut.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDurbunBoyut.Name = "lblDurbunBoyut";
-            this.lblDurbunBoyut.Size = new System.Drawing.Size(81, 13);
+            this.lblDurbunBoyut.Size = new System.Drawing.Size(107, 17);
             this.lblDurbunBoyut.TabIndex = 13;
             this.lblDurbunBoyut.Text = "Dürbün Boyutu:";
             // 
             // lblCantaBoyut
             // 
             this.lblCantaBoyut.AutoSize = true;
-            this.lblCantaBoyut.Location = new System.Drawing.Point(482, 11);
+            this.lblCantaBoyut.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblCantaBoyut.Location = new System.Drawing.Point(619, 14);
+            this.lblCantaBoyut.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCantaBoyut.Name = "lblCantaBoyut";
-            this.lblCantaBoyut.Size = new System.Drawing.Size(74, 13);
+            this.lblCantaBoyut.Size = new System.Drawing.Size(97, 17);
             this.lblCantaBoyut.TabIndex = 13;
             this.lblCantaBoyut.Text = "Çanta Boyutu:";
             // 
             // lblCantaRenk
             // 
             this.lblCantaRenk.AutoSize = true;
-            this.lblCantaRenk.Location = new System.Drawing.Point(482, 37);
+            this.lblCantaRenk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblCantaRenk.Location = new System.Drawing.Point(619, 45);
+            this.lblCantaRenk.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCantaRenk.Name = "lblCantaRenk";
-            this.lblCantaRenk.Size = new System.Drawing.Size(69, 13);
+            this.lblCantaRenk.Size = new System.Drawing.Size(90, 17);
             this.lblCantaRenk.TabIndex = 13;
             this.lblCantaRenk.Text = "Çanta Rengi:";
             // 
             // lblMalzemeFiyat
             // 
             this.lblMalzemeFiyat.AutoSize = true;
-            this.lblMalzemeFiyat.Location = new System.Drawing.Point(482, 63);
+            this.lblMalzemeFiyat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMalzemeFiyat.Location = new System.Drawing.Point(620, 77);
+            this.lblMalzemeFiyat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMalzemeFiyat.Name = "lblMalzemeFiyat";
-            this.lblMalzemeFiyat.Size = new System.Drawing.Size(77, 13);
+            this.lblMalzemeFiyat.Size = new System.Drawing.Size(102, 17);
             this.lblMalzemeFiyat.TabIndex = 13;
             this.lblMalzemeFiyat.Text = "Malzeme Fiyat:";
             // 
             // btnMalzemeAra
             // 
-            this.btnMalzemeAra.Location = new System.Drawing.Point(688, 6);
+            this.btnMalzemeAra.Location = new System.Drawing.Point(917, 7);
+            this.btnMalzemeAra.Margin = new System.Windows.Forms.Padding(4);
             this.btnMalzemeAra.Name = "btnMalzemeAra";
-            this.btnMalzemeAra.Size = new System.Drawing.Size(104, 20);
+            this.btnMalzemeAra.Size = new System.Drawing.Size(139, 25);
             this.btnMalzemeAra.TabIndex = 14;
             this.btnMalzemeAra.Text = "Malzeme Ara";
             this.btnMalzemeAra.UseVisualStyleBackColor = true;
@@ -438,9 +494,10 @@ namespace _12._29.Carsamba.WF
             // 
             // btnMalzemeEkle
             // 
-            this.btnMalzemeEkle.Location = new System.Drawing.Point(688, 33);
+            this.btnMalzemeEkle.Location = new System.Drawing.Point(917, 41);
+            this.btnMalzemeEkle.Margin = new System.Windows.Forms.Padding(4);
             this.btnMalzemeEkle.Name = "btnMalzemeEkle";
-            this.btnMalzemeEkle.Size = new System.Drawing.Size(104, 20);
+            this.btnMalzemeEkle.Size = new System.Drawing.Size(139, 25);
             this.btnMalzemeEkle.TabIndex = 14;
             this.btnMalzemeEkle.Text = "Malzeme Ekle";
             this.btnMalzemeEkle.UseVisualStyleBackColor = true;
@@ -449,8 +506,9 @@ namespace _12._29.Carsamba.WF
             // btnMalzemeSil
             // 
             this.btnMalzemeSil.Location = new System.Drawing.Point(0, 0);
+            this.btnMalzemeSil.Margin = new System.Windows.Forms.Padding(4);
             this.btnMalzemeSil.Name = "btnMalzemeSil";
-            this.btnMalzemeSil.Size = new System.Drawing.Size(104, 20);
+            this.btnMalzemeSil.Size = new System.Drawing.Size(139, 25);
             this.btnMalzemeSil.TabIndex = 14;
             this.btnMalzemeSil.Text = "Malzeme Sil";
             this.btnMalzemeSil.UseVisualStyleBackColor = true;
@@ -458,9 +516,10 @@ namespace _12._29.Carsamba.WF
             // 
             // btnMalzemeGuncelle
             // 
-            this.btnMalzemeGuncelle.Location = new System.Drawing.Point(0, 25);
+            this.btnMalzemeGuncelle.Location = new System.Drawing.Point(0, 31);
+            this.btnMalzemeGuncelle.Margin = new System.Windows.Forms.Padding(4);
             this.btnMalzemeGuncelle.Name = "btnMalzemeGuncelle";
-            this.btnMalzemeGuncelle.Size = new System.Drawing.Size(104, 20);
+            this.btnMalzemeGuncelle.Size = new System.Drawing.Size(139, 25);
             this.btnMalzemeGuncelle.TabIndex = 14;
             this.btnMalzemeGuncelle.Text = "Malzeme Güncelle";
             this.btnMalzemeGuncelle.UseVisualStyleBackColor = true;
@@ -468,9 +527,10 @@ namespace _12._29.Carsamba.WF
             // 
             // btnMalzemeListele
             // 
-            this.btnMalzemeListele.Location = new System.Drawing.Point(688, 110);
+            this.btnMalzemeListele.Location = new System.Drawing.Point(917, 135);
+            this.btnMalzemeListele.Margin = new System.Windows.Forms.Padding(4);
             this.btnMalzemeListele.Name = "btnMalzemeListele";
-            this.btnMalzemeListele.Size = new System.Drawing.Size(104, 20);
+            this.btnMalzemeListele.Size = new System.Drawing.Size(139, 25);
             this.btnMalzemeListele.TabIndex = 14;
             this.btnMalzemeListele.Text = "Malzemeleri Listele";
             this.btnMalzemeListele.UseVisualStyleBackColor = true;
@@ -478,13 +538,15 @@ namespace _12._29.Carsamba.WF
             // 
             // dgvSilahListe
             // 
+            this.dgvSilahListe.AllowUserToAddRows = false;
+            this.dgvSilahListe.AllowUserToDeleteRows = false;
             this.dgvSilahListe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSilahListe.Location = new System.Drawing.Point(2, 132);
-            this.dgvSilahListe.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvSilahListe.Location = new System.Drawing.Point(3, 162);
+            this.dgvSilahListe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvSilahListe.Name = "dgvSilahListe";
             this.dgvSilahListe.RowHeadersWidth = 51;
             this.dgvSilahListe.RowTemplate.Height = 24;
-            this.dgvSilahListe.Size = new System.Drawing.Size(1038, 369);
+            this.dgvSilahListe.Size = new System.Drawing.Size(1384, 465);
             this.dgvSilahListe.TabIndex = 15;
             // 
             // tabControl1
@@ -494,10 +556,10 @@ namespace _12._29.Carsamba.WF
             this.tabControl1.Controls.Add(this.tabPageEkipman);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1053, 539);
+            this.tabControl1.Size = new System.Drawing.Size(1404, 663);
             this.tabControl1.TabIndex = 16;
             // 
             // tabPageAv
@@ -524,11 +586,11 @@ namespace _12._29.Carsamba.WF
             this.tabPageAv.Controls.Add(this.btnSilahListele);
             this.tabPageAv.Controls.Add(this.btnSilahAra);
             this.tabPageAv.Controls.Add(this.pnlAv);
-            this.tabPageAv.Location = new System.Drawing.Point(4, 22);
-            this.tabPageAv.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPageAv.Location = new System.Drawing.Point(4, 25);
+            this.tabPageAv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPageAv.Name = "tabPageAv";
-            this.tabPageAv.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPageAv.Size = new System.Drawing.Size(1045, 513);
+            this.tabPageAv.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPageAv.Size = new System.Drawing.Size(1396, 634);
             this.tabPageAv.TabIndex = 0;
             this.tabPageAv.Text = "Av Silahları";
             this.tabPageAv.UseVisualStyleBackColor = true;
@@ -539,15 +601,18 @@ namespace _12._29.Carsamba.WF
             this.cmbBoxSilahRengi.Items.AddRange(new object[] {
             "Altın",
             "Gümüş",
+            "Gümüş-Gri",
             "Gümüş-Kahverengi",
             "Gümüş-Siyah",
             "Kahverengi",
             "Siyah",
             "Siyah-Kahverengi",
+            "Siyah-Kırmızı",
             "Siyah-Altın"});
-            this.cmbBoxSilahRengi.Location = new System.Drawing.Point(312, 30);
+            this.cmbBoxSilahRengi.Location = new System.Drawing.Point(416, 37);
+            this.cmbBoxSilahRengi.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBoxSilahRengi.Name = "cmbBoxSilahRengi";
-            this.cmbBoxSilahRengi.Size = new System.Drawing.Size(122, 21);
+            this.cmbBoxSilahRengi.Size = new System.Drawing.Size(161, 24);
             this.cmbBoxSilahRengi.TabIndex = 20;
             // 
             // cmbBoxMermitipi
@@ -556,9 +621,10 @@ namespace _12._29.Carsamba.WF
             this.cmbBoxMermitipi.Items.AddRange(new object[] {
             "Saçma",
             "Magnum"});
-            this.cmbBoxMermitipi.Location = new System.Drawing.Point(95, 106);
+            this.cmbBoxMermitipi.Location = new System.Drawing.Point(127, 130);
+            this.cmbBoxMermitipi.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBoxMermitipi.Name = "cmbBoxMermitipi";
-            this.cmbBoxMermitipi.Size = new System.Drawing.Size(122, 21);
+            this.cmbBoxMermitipi.Size = new System.Drawing.Size(161, 24);
             this.cmbBoxMermitipi.TabIndex = 19;
             // 
             // cmbBoxSilahAtisModu
@@ -567,28 +633,42 @@ namespace _12._29.Carsamba.WF
             this.cmbBoxSilahAtisModu.Items.AddRange(new object[] {
             "Tekli",
             "Tekli-Çiftli",
-            "Yarı Otomatik"});
-            this.cmbBoxSilahAtisModu.Location = new System.Drawing.Point(95, 81);
+            "Yarı Otomatik",
+            "Otomatik"});
+            this.cmbBoxSilahAtisModu.Location = new System.Drawing.Point(127, 100);
+            this.cmbBoxSilahAtisModu.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBoxSilahAtisModu.Name = "cmbBoxSilahAtisModu";
-            this.cmbBoxSilahAtisModu.Size = new System.Drawing.Size(122, 21);
+            this.cmbBoxSilahAtisModu.Size = new System.Drawing.Size(161, 24);
             this.cmbBoxSilahAtisModu.TabIndex = 18;
             // 
             // cmbBoxSilahTipi
             // 
             this.cmbBoxSilahTipi.FormattingEnabled = true;
             this.cmbBoxSilahTipi.Items.AddRange(new object[] {
+            "AR",
+            "BN",
+            "BP",
+            "Darne",
+            "DLT",
+            "GTK",
+            "HTK",
+            "SFP",
+            "SFM",
             "Yivli",
-            "Yivsiz"});
-            this.cmbBoxSilahTipi.Location = new System.Drawing.Point(95, 29);
+            "Yivsiz",
+            "WB"});
+            this.cmbBoxSilahTipi.Location = new System.Drawing.Point(127, 36);
+            this.cmbBoxSilahTipi.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBoxSilahTipi.Name = "cmbBoxSilahTipi";
-            this.cmbBoxSilahTipi.Size = new System.Drawing.Size(122, 21);
+            this.cmbBoxSilahTipi.Size = new System.Drawing.Size(161, 24);
             this.cmbBoxSilahTipi.TabIndex = 17;
             // 
             // picboxSilah
             // 
-            this.picboxSilah.Location = new System.Drawing.Point(589, 6);
+            this.picboxSilah.Location = new System.Drawing.Point(734, 8);
+            this.picboxSilah.Margin = new System.Windows.Forms.Padding(4);
             this.picboxSilah.Name = "picboxSilah";
-            this.picboxSilah.Size = new System.Drawing.Size(230, 121);
+            this.picboxSilah.Size = new System.Drawing.Size(653, 149);
             this.picboxSilah.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picboxSilah.TabIndex = 16;
             this.picboxSilah.TabStop = false;
@@ -632,65 +712,71 @@ namespace _12._29.Carsamba.WF
             this.tabPageMalzeme.Controls.Add(this.txtMalzemeID);
             this.tabPageMalzeme.Controls.Add(this.lblDurbunBoyut);
             this.tabPageMalzeme.Controls.Add(this.txtMalzemeFiyat);
-            this.tabPageMalzeme.Location = new System.Drawing.Point(4, 22);
-            this.tabPageMalzeme.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPageMalzeme.Location = new System.Drawing.Point(4, 25);
+            this.tabPageMalzeme.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPageMalzeme.Name = "tabPageMalzeme";
-            this.tabPageMalzeme.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPageMalzeme.Size = new System.Drawing.Size(1045, 513);
+            this.tabPageMalzeme.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPageMalzeme.Size = new System.Drawing.Size(1396, 634);
             this.tabPageMalzeme.TabIndex = 1;
             this.tabPageMalzeme.Text = "Av Malzemeleri";
             this.tabPageMalzeme.UseVisualStyleBackColor = true;
             // 
             // picBoxSapka
             // 
-            this.picBoxSapka.Location = new System.Drawing.Point(885, 11);
+            this.picBoxSapka.Location = new System.Drawing.Point(1180, 14);
+            this.picBoxSapka.Margin = new System.Windows.Forms.Padding(4);
             this.picBoxSapka.Name = "picBoxSapka";
-            this.picBoxSapka.Size = new System.Drawing.Size(71, 57);
+            this.picBoxSapka.Size = new System.Drawing.Size(95, 70);
             this.picBoxSapka.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxSapka.TabIndex = 21;
             this.picBoxSapka.TabStop = false;
             // 
             // picBoxKemer
             // 
-            this.picBoxKemer.Location = new System.Drawing.Point(962, 11);
+            this.picBoxKemer.Location = new System.Drawing.Point(1283, 14);
+            this.picBoxKemer.Margin = new System.Windows.Forms.Padding(4);
             this.picBoxKemer.Name = "picBoxKemer";
-            this.picBoxKemer.Size = new System.Drawing.Size(71, 57);
+            this.picBoxKemer.Size = new System.Drawing.Size(95, 70);
             this.picBoxKemer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxKemer.TabIndex = 21;
             this.picBoxKemer.TabStop = false;
             // 
             // picBoxKiyafet
             // 
-            this.picBoxKiyafet.Location = new System.Drawing.Point(808, 11);
+            this.picBoxKiyafet.Location = new System.Drawing.Point(1077, 14);
+            this.picBoxKiyafet.Margin = new System.Windows.Forms.Padding(4);
             this.picBoxKiyafet.Name = "picBoxKiyafet";
-            this.picBoxKiyafet.Size = new System.Drawing.Size(71, 57);
+            this.picBoxKiyafet.Size = new System.Drawing.Size(95, 70);
             this.picBoxKiyafet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxKiyafet.TabIndex = 21;
             this.picBoxKiyafet.TabStop = false;
             // 
             // picBoxDurbun
             // 
-            this.picBoxDurbun.Location = new System.Drawing.Point(885, 74);
+            this.picBoxDurbun.Location = new System.Drawing.Point(1180, 91);
+            this.picBoxDurbun.Margin = new System.Windows.Forms.Padding(4);
             this.picBoxDurbun.Name = "picBoxDurbun";
-            this.picBoxDurbun.Size = new System.Drawing.Size(71, 57);
+            this.picBoxDurbun.Size = new System.Drawing.Size(95, 70);
             this.picBoxDurbun.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxDurbun.TabIndex = 21;
             this.picBoxDurbun.TabStop = false;
             // 
             // picBoxCanta
             // 
-            this.picBoxCanta.Location = new System.Drawing.Point(962, 74);
+            this.picBoxCanta.Location = new System.Drawing.Point(1283, 91);
+            this.picBoxCanta.Margin = new System.Windows.Forms.Padding(4);
             this.picBoxCanta.Name = "picBoxCanta";
-            this.picBoxCanta.Size = new System.Drawing.Size(71, 57);
+            this.picBoxCanta.Size = new System.Drawing.Size(95, 70);
             this.picBoxCanta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxCanta.TabIndex = 21;
             this.picBoxCanta.TabStop = false;
             // 
             // picBoxBot
             // 
-            this.picBoxBot.Location = new System.Drawing.Point(808, 74);
+            this.picBoxBot.Location = new System.Drawing.Point(1077, 91);
+            this.picBoxBot.Margin = new System.Windows.Forms.Padding(4);
             this.picBoxBot.Name = "picBoxBot";
-            this.picBoxBot.Size = new System.Drawing.Size(71, 57);
+            this.picBoxBot.Size = new System.Drawing.Size(95, 70);
             this.picBoxBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxBot.TabIndex = 21;
             this.picBoxBot.TabStop = false;
@@ -701,14 +787,16 @@ namespace _12._29.Carsamba.WF
             this.cmbBoxCantaRenk.Items.AddRange(new object[] {
             "Beyaz",
             "Gri",
+            "Kahverengi",
             "Kamuflaj",
             "Sarı",
             "Siyah",
             "Turuncu",
             "Yeşil"});
-            this.cmbBoxCantaRenk.Location = new System.Drawing.Point(561, 34);
+            this.cmbBoxCantaRenk.Location = new System.Drawing.Point(729, 42);
+            this.cmbBoxCantaRenk.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBoxCantaRenk.Name = "cmbBoxCantaRenk";
-            this.cmbBoxCantaRenk.Size = new System.Drawing.Size(122, 21);
+            this.cmbBoxCantaRenk.Size = new System.Drawing.Size(161, 24);
             this.cmbBoxCantaRenk.TabIndex = 20;
             // 
             // cmbBoxCantaBoyut
@@ -718,9 +806,10 @@ namespace _12._29.Carsamba.WF
             "Küçük",
             "Normal",
             "Büyük"});
-            this.cmbBoxCantaBoyut.Location = new System.Drawing.Point(561, 8);
+            this.cmbBoxCantaBoyut.Location = new System.Drawing.Point(729, 10);
+            this.cmbBoxCantaBoyut.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBoxCantaBoyut.Name = "cmbBoxCantaBoyut";
-            this.cmbBoxCantaBoyut.Size = new System.Drawing.Size(122, 21);
+            this.cmbBoxCantaBoyut.Size = new System.Drawing.Size(161, 24);
             this.cmbBoxCantaBoyut.TabIndex = 20;
             // 
             // cmbBoxDurbunBoyut
@@ -729,9 +818,10 @@ namespace _12._29.Carsamba.WF
             this.cmbBoxDurbunBoyut.Items.AddRange(new object[] {
             "Cep Dürbünü",
             "Normal"});
-            this.cmbBoxDurbunBoyut.Location = new System.Drawing.Point(338, 110);
+            this.cmbBoxDurbunBoyut.Location = new System.Drawing.Point(451, 135);
+            this.cmbBoxDurbunBoyut.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBoxDurbunBoyut.Name = "cmbBoxDurbunBoyut";
-            this.cmbBoxDurbunBoyut.Size = new System.Drawing.Size(122, 21);
+            this.cmbBoxDurbunBoyut.Size = new System.Drawing.Size(161, 24);
             this.cmbBoxDurbunBoyut.TabIndex = 20;
             // 
             // cmbBoxBotRenk
@@ -740,14 +830,16 @@ namespace _12._29.Carsamba.WF
             this.cmbBoxBotRenk.Items.AddRange(new object[] {
             "Beyaz",
             "Gri",
+            "Kahverengi",
             "Kamuflaj",
             "Sarı",
             "Siyah",
             "Turuncu",
             "Yeşil"});
-            this.cmbBoxBotRenk.Location = new System.Drawing.Point(338, 84);
+            this.cmbBoxBotRenk.Location = new System.Drawing.Point(451, 103);
+            this.cmbBoxBotRenk.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBoxBotRenk.Name = "cmbBoxBotRenk";
-            this.cmbBoxBotRenk.Size = new System.Drawing.Size(122, 21);
+            this.cmbBoxBotRenk.Size = new System.Drawing.Size(161, 24);
             this.cmbBoxBotRenk.TabIndex = 20;
             // 
             // cmbBoxBotTip
@@ -756,10 +848,12 @@ namespace _12._29.Carsamba.WF
             this.cmbBoxBotTip.Items.AddRange(new object[] {
             "Avcılık Botu",
             "Su Geçirmez",
+            "Yağmurluk Çizme",
             "XHunt"});
-            this.cmbBoxBotTip.Location = new System.Drawing.Point(338, 58);
+            this.cmbBoxBotTip.Location = new System.Drawing.Point(451, 71);
+            this.cmbBoxBotTip.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBoxBotTip.Name = "cmbBoxBotTip";
-            this.cmbBoxBotTip.Size = new System.Drawing.Size(122, 21);
+            this.cmbBoxBotTip.Size = new System.Drawing.Size(161, 24);
             this.cmbBoxBotTip.TabIndex = 20;
             // 
             // cmbBoxKemerRenk
@@ -768,14 +862,16 @@ namespace _12._29.Carsamba.WF
             this.cmbBoxKemerRenk.Items.AddRange(new object[] {
             "Beyaz",
             "Gri",
+            "Kahverengi",
             "Kamuflaj",
             "Sarı",
             "Siyah",
             "Turuncu",
             "Yeşil"});
-            this.cmbBoxKemerRenk.Location = new System.Drawing.Point(338, 32);
+            this.cmbBoxKemerRenk.Location = new System.Drawing.Point(451, 39);
+            this.cmbBoxKemerRenk.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBoxKemerRenk.Name = "cmbBoxKemerRenk";
-            this.cmbBoxKemerRenk.Size = new System.Drawing.Size(122, 21);
+            this.cmbBoxKemerRenk.Size = new System.Drawing.Size(161, 24);
             this.cmbBoxKemerRenk.TabIndex = 20;
             // 
             // cmbBoxKemerTip
@@ -785,9 +881,10 @@ namespace _12._29.Carsamba.WF
             "Belden",
             "Boyundan",
             "Omuz Askılı"});
-            this.cmbBoxKemerTip.Location = new System.Drawing.Point(338, 8);
+            this.cmbBoxKemerTip.Location = new System.Drawing.Point(451, 10);
+            this.cmbBoxKemerTip.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBoxKemerTip.Name = "cmbBoxKemerTip";
-            this.cmbBoxKemerTip.Size = new System.Drawing.Size(122, 21);
+            this.cmbBoxKemerTip.Size = new System.Drawing.Size(161, 24);
             this.cmbBoxKemerTip.TabIndex = 20;
             // 
             // cmbBoxSapkaRenk
@@ -796,14 +893,16 @@ namespace _12._29.Carsamba.WF
             this.cmbBoxSapkaRenk.Items.AddRange(new object[] {
             "Beyaz",
             "Gri",
+            "Kahverengi",
             "Kamuflaj",
             "Sarı",
             "Siyah",
             "Turuncu",
             "Yeşil"});
-            this.cmbBoxSapkaRenk.Location = new System.Drawing.Point(92, 112);
+            this.cmbBoxSapkaRenk.Location = new System.Drawing.Point(123, 138);
+            this.cmbBoxSapkaRenk.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBoxSapkaRenk.Name = "cmbBoxSapkaRenk";
-            this.cmbBoxSapkaRenk.Size = new System.Drawing.Size(122, 21);
+            this.cmbBoxSapkaRenk.Size = new System.Drawing.Size(161, 24);
             this.cmbBoxSapkaRenk.TabIndex = 20;
             // 
             // cmbBoxSapkaTip
@@ -812,10 +911,12 @@ namespace _12._29.Carsamba.WF
             this.cmbBoxSapkaTip.Items.AddRange(new object[] {
             "Avcı Şapkası",
             "Çift Taraflı Bere",
-            "Normal"});
-            this.cmbBoxSapkaTip.Location = new System.Drawing.Point(92, 86);
+            "Normal",
+            "Toundra"});
+            this.cmbBoxSapkaTip.Location = new System.Drawing.Point(123, 106);
+            this.cmbBoxSapkaTip.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBoxSapkaTip.Name = "cmbBoxSapkaTip";
-            this.cmbBoxSapkaTip.Size = new System.Drawing.Size(122, 21);
+            this.cmbBoxSapkaTip.Size = new System.Drawing.Size(161, 24);
             this.cmbBoxSapkaTip.TabIndex = 20;
             // 
             // cmbBoxKiyafetRenk
@@ -824,14 +925,16 @@ namespace _12._29.Carsamba.WF
             this.cmbBoxKiyafetRenk.Items.AddRange(new object[] {
             "Beyaz",
             "Gri",
+            "Kahverengi",
             "Kamuflaj",
             "Sarı",
             "Siyah",
             "Turuncu",
             "Yeşil"});
-            this.cmbBoxKiyafetRenk.Location = new System.Drawing.Point(92, 60);
+            this.cmbBoxKiyafetRenk.Location = new System.Drawing.Point(123, 74);
+            this.cmbBoxKiyafetRenk.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBoxKiyafetRenk.Name = "cmbBoxKiyafetRenk";
-            this.cmbBoxKiyafetRenk.Size = new System.Drawing.Size(122, 21);
+            this.cmbBoxKiyafetRenk.Size = new System.Drawing.Size(161, 24);
             this.cmbBoxKiyafetRenk.TabIndex = 20;
             // 
             // cmbBoxKiyafetTip
@@ -841,20 +944,23 @@ namespace _12._29.Carsamba.WF
             "Fosforlu",
             "Kamuflaj",
             "Su Geçirmez"});
-            this.cmbBoxKiyafetTip.Location = new System.Drawing.Point(92, 34);
+            this.cmbBoxKiyafetTip.Location = new System.Drawing.Point(123, 42);
+            this.cmbBoxKiyafetTip.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBoxKiyafetTip.Name = "cmbBoxKiyafetTip";
-            this.cmbBoxKiyafetTip.Size = new System.Drawing.Size(122, 21);
+            this.cmbBoxKiyafetTip.Size = new System.Drawing.Size(161, 24);
             this.cmbBoxKiyafetTip.TabIndex = 19;
             // 
             // dgvMalzemeListe
             // 
+            this.dgvMalzemeListe.AllowUserToAddRows = false;
+            this.dgvMalzemeListe.AllowUserToDeleteRows = false;
             this.dgvMalzemeListe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMalzemeListe.Location = new System.Drawing.Point(2, 140);
-            this.dgvMalzemeListe.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvMalzemeListe.Location = new System.Drawing.Point(3, 172);
+            this.dgvMalzemeListe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvMalzemeListe.Name = "dgvMalzemeListe";
             this.dgvMalzemeListe.RowHeadersWidth = 51;
             this.dgvMalzemeListe.RowTemplate.Height = 24;
-            this.dgvMalzemeListe.Size = new System.Drawing.Size(1036, 366);
+            this.dgvMalzemeListe.Size = new System.Drawing.Size(1381, 455);
             this.dgvMalzemeListe.TabIndex = 18;
             // 
             // pnlMalzeme
@@ -862,19 +968,19 @@ namespace _12._29.Carsamba.WF
             this.pnlMalzeme.Controls.Add(this.btnMalzemeSil);
             this.pnlMalzeme.Controls.Add(this.btnMalzemeGuncelle);
             this.pnlMalzeme.Enabled = false;
-            this.pnlMalzeme.Location = new System.Drawing.Point(688, 59);
-            this.pnlMalzeme.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlMalzeme.Location = new System.Drawing.Point(917, 73);
+            this.pnlMalzeme.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlMalzeme.Name = "pnlMalzeme";
-            this.pnlMalzeme.Size = new System.Drawing.Size(106, 46);
+            this.pnlMalzeme.Size = new System.Drawing.Size(141, 57);
             this.pnlMalzeme.TabIndex = 17;
             // 
             // lblKemerRengi
             // 
             this.lblKemerRengi.AutoSize = true;
-            this.lblKemerRengi.Location = new System.Drawing.Point(218, 35);
-            this.lblKemerRengi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblKemerRengi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblKemerRengi.Location = new System.Drawing.Point(292, 42);
             this.lblKemerRengi.Name = "lblKemerRengi";
-            this.lblKemerRengi.Size = new System.Drawing.Size(115, 13);
+            this.lblKemerRengi.Size = new System.Drawing.Size(152, 17);
             this.lblKemerRengi.TabIndex = 16;
             this.lblKemerRengi.Text = "Ekipman Kemer Rengi:";
             // 
@@ -899,27 +1005,29 @@ namespace _12._29.Carsamba.WF
             this.tabPageEkipman.Controls.Add(this.lblEkipmanSilahID);
             this.tabPageEkipman.Controls.Add(this.lblAvTuru);
             this.tabPageEkipman.Controls.Add(this.lblEkipmanID);
-            this.tabPageEkipman.Location = new System.Drawing.Point(4, 22);
-            this.tabPageEkipman.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPageEkipman.Location = new System.Drawing.Point(4, 25);
+            this.tabPageEkipman.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPageEkipman.Name = "tabPageEkipman";
-            this.tabPageEkipman.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPageEkipman.Size = new System.Drawing.Size(1045, 513);
+            this.tabPageEkipman.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPageEkipman.Size = new System.Drawing.Size(1396, 634);
             this.tabPageEkipman.TabIndex = 2;
             this.tabPageEkipman.Text = "Av Ekipmanları";
             this.tabPageEkipman.UseVisualStyleBackColor = true;
             // 
             // txtEkipmanMalzemeID
             // 
-            this.txtEkipmanMalzemeID.Location = new System.Drawing.Point(326, 7);
+            this.txtEkipmanMalzemeID.Location = new System.Drawing.Point(420, 10);
+            this.txtEkipmanMalzemeID.Margin = new System.Windows.Forms.Padding(4);
             this.txtEkipmanMalzemeID.Name = "txtEkipmanMalzemeID";
-            this.txtEkipmanMalzemeID.Size = new System.Drawing.Size(128, 20);
+            this.txtEkipmanMalzemeID.Size = new System.Drawing.Size(169, 22);
             this.txtEkipmanMalzemeID.TabIndex = 9;
             // 
             // txtEkipmanSilahID
             // 
-            this.txtEkipmanSilahID.Location = new System.Drawing.Point(100, 52);
+            this.txtEkipmanSilahID.Location = new System.Drawing.Point(117, 64);
+            this.txtEkipmanSilahID.Margin = new System.Windows.Forms.Padding(4);
             this.txtEkipmanSilahID.Name = "txtEkipmanSilahID";
-            this.txtEkipmanSilahID.Size = new System.Drawing.Size(128, 20);
+            this.txtEkipmanSilahID.Size = new System.Drawing.Size(169, 22);
             this.txtEkipmanSilahID.TabIndex = 8;
             // 
             // cmbBoxAvTuru
@@ -933,21 +1041,23 @@ namespace _12._29.Carsamba.WF
             "Ördek Avı",
             "Tavşan Avı",
             "Timsah Avı"});
-            this.cmbBoxAvTuru.Location = new System.Drawing.Point(100, 29);
-            this.cmbBoxAvTuru.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbBoxAvTuru.Location = new System.Drawing.Point(117, 36);
+            this.cmbBoxAvTuru.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbBoxAvTuru.Name = "cmbBoxAvTuru";
-            this.cmbBoxAvTuru.Size = new System.Drawing.Size(128, 21);
+            this.cmbBoxAvTuru.Size = new System.Drawing.Size(169, 24);
             this.cmbBoxAvTuru.TabIndex = 5;
             // 
             // dgvEkipmanListe
             // 
+            this.dgvEkipmanListe.AllowUserToAddRows = false;
+            this.dgvEkipmanListe.AllowUserToDeleteRows = false;
             this.dgvEkipmanListe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEkipmanListe.Location = new System.Drawing.Point(8, 124);
-            this.dgvEkipmanListe.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvEkipmanListe.Location = new System.Drawing.Point(11, 153);
+            this.dgvEkipmanListe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvEkipmanListe.Name = "dgvEkipmanListe";
             this.dgvEkipmanListe.RowHeadersWidth = 51;
             this.dgvEkipmanListe.RowTemplate.Height = 24;
-            this.dgvEkipmanListe.Size = new System.Drawing.Size(1032, 378);
+            this.dgvEkipmanListe.Size = new System.Drawing.Size(1377, 474);
             this.dgvEkipmanListe.TabIndex = 4;
             // 
             // pnlEkipman
@@ -955,18 +1065,18 @@ namespace _12._29.Carsamba.WF
             this.pnlEkipman.Controls.Add(this.btnEkipmanGuncelle);
             this.pnlEkipman.Controls.Add(this.btnEkipmanSil);
             this.pnlEkipman.Enabled = false;
-            this.pnlEkipman.Location = new System.Drawing.Point(458, 66);
-            this.pnlEkipman.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlEkipman.Location = new System.Drawing.Point(596, 81);
+            this.pnlEkipman.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlEkipman.Name = "pnlEkipman";
-            this.pnlEkipman.Size = new System.Drawing.Size(104, 54);
+            this.pnlEkipman.Size = new System.Drawing.Size(139, 66);
             this.pnlEkipman.TabIndex = 3;
             // 
             // btnEkipmanGuncelle
             // 
-            this.btnEkipmanGuncelle.Location = new System.Drawing.Point(0, 29);
-            this.btnEkipmanGuncelle.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEkipmanGuncelle.Location = new System.Drawing.Point(0, 36);
+            this.btnEkipmanGuncelle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEkipmanGuncelle.Name = "btnEkipmanGuncelle";
-            this.btnEkipmanGuncelle.Size = new System.Drawing.Size(104, 24);
+            this.btnEkipmanGuncelle.Size = new System.Drawing.Size(139, 30);
             this.btnEkipmanGuncelle.TabIndex = 2;
             this.btnEkipmanGuncelle.Text = "Ekipman Güncelle";
             this.btnEkipmanGuncelle.UseVisualStyleBackColor = true;
@@ -975,9 +1085,9 @@ namespace _12._29.Carsamba.WF
             // btnEkipmanSil
             // 
             this.btnEkipmanSil.Location = new System.Drawing.Point(0, 0);
-            this.btnEkipmanSil.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEkipmanSil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEkipmanSil.Name = "btnEkipmanSil";
-            this.btnEkipmanSil.Size = new System.Drawing.Size(104, 24);
+            this.btnEkipmanSil.Size = new System.Drawing.Size(139, 30);
             this.btnEkipmanSil.TabIndex = 2;
             this.btnEkipmanSil.Text = "Ekipman Sil";
             this.btnEkipmanSil.UseVisualStyleBackColor = true;
@@ -985,10 +1095,10 @@ namespace _12._29.Carsamba.WF
             // 
             // btnEkipmanListe
             // 
-            this.btnEkipmanListe.Location = new System.Drawing.Point(566, 7);
-            this.btnEkipmanListe.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEkipmanListe.Location = new System.Drawing.Point(740, 9);
+            this.btnEkipmanListe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEkipmanListe.Name = "btnEkipmanListe";
-            this.btnEkipmanListe.Size = new System.Drawing.Size(104, 24);
+            this.btnEkipmanListe.Size = new System.Drawing.Size(139, 30);
             this.btnEkipmanListe.TabIndex = 2;
             this.btnEkipmanListe.Text = "Ekipman Listele";
             this.btnEkipmanListe.UseVisualStyleBackColor = true;
@@ -996,10 +1106,10 @@ namespace _12._29.Carsamba.WF
             // 
             // btnEkipmanEkle
             // 
-            this.btnEkipmanEkle.Location = new System.Drawing.Point(458, 37);
-            this.btnEkipmanEkle.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEkipmanEkle.Location = new System.Drawing.Point(596, 46);
+            this.btnEkipmanEkle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEkipmanEkle.Name = "btnEkipmanEkle";
-            this.btnEkipmanEkle.Size = new System.Drawing.Size(104, 24);
+            this.btnEkipmanEkle.Size = new System.Drawing.Size(139, 30);
             this.btnEkipmanEkle.TabIndex = 2;
             this.btnEkipmanEkle.Text = "Ekipman Ekle";
             this.btnEkipmanEkle.UseVisualStyleBackColor = true;
@@ -1007,10 +1117,10 @@ namespace _12._29.Carsamba.WF
             // 
             // btnEkipmanAra
             // 
-            this.btnEkipmanAra.Location = new System.Drawing.Point(458, 7);
-            this.btnEkipmanAra.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEkipmanAra.Location = new System.Drawing.Point(596, 9);
+            this.btnEkipmanAra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEkipmanAra.Name = "btnEkipmanAra";
-            this.btnEkipmanAra.Size = new System.Drawing.Size(104, 24);
+            this.btnEkipmanAra.Size = new System.Drawing.Size(139, 30);
             this.btnEkipmanAra.TabIndex = 2;
             this.btnEkipmanAra.Text = "Ekipman Ara";
             this.btnEkipmanAra.UseVisualStyleBackColor = true;
@@ -1018,103 +1128,104 @@ namespace _12._29.Carsamba.WF
             // 
             // txtEkipmanToplamFiyat
             // 
-            this.txtEkipmanToplamFiyat.Location = new System.Drawing.Point(326, 53);
-            this.txtEkipmanToplamFiyat.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEkipmanToplamFiyat.Location = new System.Drawing.Point(420, 66);
+            this.txtEkipmanToplamFiyat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEkipmanToplamFiyat.Name = "txtEkipmanToplamFiyat";
-            this.txtEkipmanToplamFiyat.Size = new System.Drawing.Size(128, 20);
+            this.txtEkipmanToplamFiyat.Size = new System.Drawing.Size(169, 22);
             this.txtEkipmanToplamFiyat.TabIndex = 1;
             // 
             // txtEkipmanMalzemeFiyat
             // 
-            this.txtEkipmanMalzemeFiyat.Location = new System.Drawing.Point(326, 30);
-            this.txtEkipmanMalzemeFiyat.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEkipmanMalzemeFiyat.Location = new System.Drawing.Point(420, 38);
+            this.txtEkipmanMalzemeFiyat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEkipmanMalzemeFiyat.Name = "txtEkipmanMalzemeFiyat";
-            this.txtEkipmanMalzemeFiyat.Size = new System.Drawing.Size(128, 20);
+            this.txtEkipmanMalzemeFiyat.Size = new System.Drawing.Size(169, 22);
             this.txtEkipmanMalzemeFiyat.TabIndex = 1;
             // 
             // txtEkipmanSilahFiyat
             // 
-            this.txtEkipmanSilahFiyat.Location = new System.Drawing.Point(100, 76);
-            this.txtEkipmanSilahFiyat.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEkipmanSilahFiyat.Location = new System.Drawing.Point(117, 94);
+            this.txtEkipmanSilahFiyat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEkipmanSilahFiyat.Name = "txtEkipmanSilahFiyat";
-            this.txtEkipmanSilahFiyat.Size = new System.Drawing.Size(128, 20);
+            this.txtEkipmanSilahFiyat.Size = new System.Drawing.Size(169, 22);
             this.txtEkipmanSilahFiyat.TabIndex = 1;
             // 
             // txtEkipmanID
             // 
-            this.txtEkipmanID.Location = new System.Drawing.Point(100, 7);
-            this.txtEkipmanID.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEkipmanID.Location = new System.Drawing.Point(117, 9);
+            this.txtEkipmanID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEkipmanID.Name = "txtEkipmanID";
-            this.txtEkipmanID.Size = new System.Drawing.Size(128, 20);
+            this.txtEkipmanID.Size = new System.Drawing.Size(169, 22);
             this.txtEkipmanID.TabIndex = 1;
+            this.txtEkipmanID.Enter += new System.EventHandler(this.txtEkipmanID_Enter);
             // 
             // lblEkipmanToplamFiyat
             // 
             this.lblEkipmanToplamFiyat.AutoSize = true;
-            this.lblEkipmanToplamFiyat.Location = new System.Drawing.Point(232, 55);
-            this.lblEkipmanToplamFiyat.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEkipmanToplamFiyat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblEkipmanToplamFiyat.Location = new System.Drawing.Point(292, 68);
             this.lblEkipmanToplamFiyat.Name = "lblEkipmanToplamFiyat";
-            this.lblEkipmanToplamFiyat.Size = new System.Drawing.Size(70, 13);
+            this.lblEkipmanToplamFiyat.Size = new System.Drawing.Size(93, 17);
             this.lblEkipmanToplamFiyat.TabIndex = 0;
             this.lblEkipmanToplamFiyat.Text = "Toplam Fiyat:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(232, 32);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Location = new System.Drawing.Point(292, 40);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(93, 13);
+            this.label6.Size = new System.Drawing.Size(122, 17);
             this.label6.TabIndex = 0;
             this.label6.Text = "Av Malzeme Fiyat:";
             // 
             // lblEkipmanMalzemeID
             // 
             this.lblEkipmanMalzemeID.AutoSize = true;
-            this.lblEkipmanMalzemeID.Location = new System.Drawing.Point(232, 10);
-            this.lblEkipmanMalzemeID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEkipmanMalzemeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblEkipmanMalzemeID.Location = new System.Drawing.Point(292, 12);
             this.lblEkipmanMalzemeID.Name = "lblEkipmanMalzemeID";
-            this.lblEkipmanMalzemeID.Size = new System.Drawing.Size(82, 13);
+            this.lblEkipmanMalzemeID.Size = new System.Drawing.Size(105, 17);
             this.lblEkipmanMalzemeID.TabIndex = 0;
             this.lblEkipmanMalzemeID.Text = "Av Malzeme ID:";
             // 
             // lblEkipmanSilahFiyat
             // 
             this.lblEkipmanSilahFiyat.AutoSize = true;
-            this.lblEkipmanSilahFiyat.Location = new System.Drawing.Point(6, 78);
-            this.lblEkipmanSilahFiyat.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEkipmanSilahFiyat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblEkipmanSilahFiyat.Location = new System.Drawing.Point(8, 97);
             this.lblEkipmanSilahFiyat.Name = "lblEkipmanSilahFiyat";
-            this.lblEkipmanSilahFiyat.Size = new System.Drawing.Size(76, 13);
+            this.lblEkipmanSilahFiyat.Size = new System.Drawing.Size(100, 17);
             this.lblEkipmanSilahFiyat.TabIndex = 0;
             this.lblEkipmanSilahFiyat.Text = "Av Silah Fiyatı:";
             // 
             // lblEkipmanSilahID
             // 
             this.lblEkipmanSilahID.AutoSize = true;
-            this.lblEkipmanSilahID.Location = new System.Drawing.Point(6, 55);
-            this.lblEkipmanSilahID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEkipmanSilahID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblEkipmanSilahID.Location = new System.Drawing.Point(8, 67);
             this.lblEkipmanSilahID.Name = "lblEkipmanSilahID";
-            this.lblEkipmanSilahID.Size = new System.Drawing.Size(63, 13);
+            this.lblEkipmanSilahID.Size = new System.Drawing.Size(80, 17);
             this.lblEkipmanSilahID.TabIndex = 0;
             this.lblEkipmanSilahID.Text = "Av Silah ID:";
             // 
             // lblAvTuru
             // 
             this.lblAvTuru.AutoSize = true;
-            this.lblAvTuru.Location = new System.Drawing.Point(6, 32);
-            this.lblAvTuru.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAvTuru.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAvTuru.Location = new System.Drawing.Point(8, 40);
             this.lblAvTuru.Name = "lblAvTuru";
-            this.lblAvTuru.Size = new System.Drawing.Size(48, 13);
+            this.lblAvTuru.Size = new System.Drawing.Size(62, 17);
             this.lblAvTuru.TabIndex = 0;
             this.lblAvTuru.Text = "Av Türü:";
             // 
             // lblEkipmanID
             // 
             this.lblEkipmanID.AutoSize = true;
-            this.lblEkipmanID.Location = new System.Drawing.Point(6, 10);
-            this.lblEkipmanID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEkipmanID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblEkipmanID.Location = new System.Drawing.Point(8, 12);
             this.lblEkipmanID.Name = "lblEkipmanID";
-            this.lblEkipmanID.Size = new System.Drawing.Size(81, 13);
+            this.lblEkipmanID.Size = new System.Drawing.Size(103, 17);
             this.lblEkipmanID.TabIndex = 0;
             this.lblEkipmanID.Text = "Av Ekipman ID:";
             // 
@@ -1148,11 +1259,11 @@ namespace _12._29.Carsamba.WF
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1053, 539);
+            this.ClientSize = new System.Drawing.Size(1404, 663);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -1277,6 +1388,7 @@ namespace _12._29.Carsamba.WF
         private System.Windows.Forms.OpenFileDialog ofdCanta;
         private System.Windows.Forms.TextBox txtEkipmanMalzemeID;
         private System.Windows.Forms.TextBox txtEkipmanSilahID;
+        private System.Windows.Forms.ToolTip toolTipID;
     }
 }
 
