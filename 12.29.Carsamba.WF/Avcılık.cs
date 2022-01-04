@@ -24,14 +24,12 @@ namespace _12._29.Carsamba.WF
         AvSilah avSilah = new AvSilah();
         AvMalzeme malzeme = new AvMalzeme();
         AvEkipman ekipman = new AvEkipman();
-        List<string> list = new List<string>();
 
         DialogResult dr;
 
         public Avcılık()
         {
             InitializeComponent();
-
         }
 
         private void Avcılık_Load(object sender, EventArgs e)
@@ -57,21 +55,17 @@ namespace _12._29.Carsamba.WF
 
                     pnlAv.Enabled = true;
 
-
                     StreamReader sr = new StreamReader("" + avSilah.AvSilahID + ".bak");
                     picboxSilah.ImageLocation = sr.ReadLine();
 
                     if (picboxSilah.ImageLocation == "openFileDialog1")
                     {
                         MessageBox.Show("Bu silahın resmini güncelleyiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                     }
-
                 }
                 else
                 {
                     MessageBox.Show("Aradığınız ID değeri bulunamadı!", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                     SilahTemizle();
                 }
             }
@@ -84,7 +78,6 @@ namespace _12._29.Carsamba.WF
 
         private void btnSilahEkle_Click(object sender, EventArgs e)
         {
-
             avSilah.SilahTipi = cmbBoxSilahTipi.Text;
             avSilah.SilahAdi = txtSilahAdi.Text;
             avSilah.SilahAtisModu = cmbBoxSilahAtisModu.Text;
@@ -93,16 +86,16 @@ namespace _12._29.Carsamba.WF
             avSilah.SilahRengi = cmbBoxSilahRengi.Text;
             avSilah.SilahFiyat = Convert.ToDecimal(txtSilahFiyat.Text);
 
-
             string mesaj = Avcilik.AvSilahlari.SilahEkle(avSilah);
 
             avSilah.AvSilahID = int.Parse(mesaj);
 
             MessageBox.Show("Silahın ID'si:" + " " + mesaj, "ID", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
             SilahResimEkle();
 
             MessageBox.Show("Silah başarıyla eklendi.", "BAŞARILI", MessageBoxButtons.OK);
-
+           
             SilahTemizle();
         }
 
@@ -114,7 +107,6 @@ namespace _12._29.Carsamba.WF
                 avSilah.AvSilahID = int.Parse(txtSilahID.Text);
                 Avcilik.AvSilahlari.SilahSil(avSilah);
                 pnlAv.Enabled = false;
-
             }
         }
         private void btnSilahGuncelle_Click(object sender, EventArgs e)
@@ -145,9 +137,7 @@ namespace _12._29.Carsamba.WF
 
         private void btnSilahListele_Click(object sender, EventArgs e)
         {
-
             Avcilik.AvSilahlari.SilahListele(dgvSilahListe);
-
         }
         private void SilahResimEkle()
         {
@@ -157,7 +147,6 @@ namespace _12._29.Carsamba.WF
 
             sw.Write(ofdResimEkle.FileName);
             sw.Close();
-
         }
         private void SilahTemizle()
         {
@@ -218,7 +207,6 @@ namespace _12._29.Carsamba.WF
                 else
                 {
                     MessageBox.Show("Aradığınız ID değeri bulunamadı!", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                     MalzemeTemizle();
                 }
             }
@@ -233,7 +221,6 @@ namespace _12._29.Carsamba.WF
 
         private void btnMalzemeEkle_Click(object sender, EventArgs e)
         {
-
             malzeme.KiyafetTipi = cmbBoxKiyafetTip.Text;
             malzeme.KiyafetRengi = cmbBoxKiyafetRenk.Text;
             malzeme.SapkaTipi = cmbBoxSapkaTip.Text;
@@ -375,7 +362,6 @@ namespace _12._29.Carsamba.WF
                     if (picBoxEkipmanSilah.ImageLocation == "openFileDialog1")
                     {
                         MessageBox.Show("Bu silahın resmini güncelleyiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                     }
                     sr = new StreamReader("" + ekipman.AvMalzemeID + ".bak");
                     picBoxEkipmanKiyafet.ImageLocation = sr.ReadLine();
@@ -394,7 +380,6 @@ namespace _12._29.Carsamba.WF
                 {
                     MessageBox.Show("Aradığınız ID değeri bulunamadı!", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     EkipmanTemizle();
-
                 }
             }
             else
@@ -498,22 +483,5 @@ namespace _12._29.Carsamba.WF
         {
             toolTipID.Show("Ekipman eklerken Toplam Fiyat girmenize gerek yoktur.", (IWin32Window)sender);
         }
-
-        
-
-
-
-
-
-
-
-
-
-        /*List<bolum> bolumler = new List<bolum>() {new bolum{ BolumID=11 , BolumAdi="Muhasebe" }; 
-         combobox.datasource=bolumler;
-        combobox.displaymember = "BolumAdi";
-        combobox.Valuemember = "BolumID" ;
-
-        */
     }
 }

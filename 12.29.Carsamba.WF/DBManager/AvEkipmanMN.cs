@@ -48,7 +48,6 @@ namespace _12._29.Carsamba.WF.DBManager
             }
             conn.Close();
             return ekipman;
-
         }
         public void EkipmanEkle(AvEkipman ekipman)
         {
@@ -62,12 +61,9 @@ namespace _12._29.Carsamba.WF.DBManager
             cmd.Parameters.AddWithValue("@avsilahfiyat", ekipman.AvSilahFiyat);
             cmd.Parameters.AddWithValue("@avmalzemeıd", ekipman.AvMalzemeID);
             cmd.Parameters.AddWithValue("@avmalzemefiyat", ekipman.AvMalzemeFiyat);
-           
 
             cmd.ExecuteNonQuery();
             conn.Close();
-
-
         }
         public void EkipmanSil(AvEkipman ekipman)
         {

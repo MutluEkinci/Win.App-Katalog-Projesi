@@ -81,7 +81,6 @@ namespace _12._29.Carsamba.WF.DBManager
             conn.Close();
 
             return cmd.Parameters[0].Value.ToString();
-
         }
         public void MalzemeSil(AvMalzeme malzeme)
         {
@@ -108,7 +107,6 @@ namespace _12._29.Carsamba.WF.DBManager
             strSQLUpdate = "update avmalzeme set kiyafettipi=@kiyafettipi,kiyafetrengi=@kiyafetrengi,sapkatipi=@sapkatipi,sapkarengi=@sapkarengi,ekipmankemertipi=@ekipmankemertipi,ekipmankemerrengi=@ekipmankemerrengi,bottipi=@bottipi,botrengi=@botrengi,durbunboyutu=@durbunboyutu,cantaboyutu=@cantaboyutu,cantarengi=@cantarengi,fiyat=@fiyat where avmalzemeID=@avmalzemeID";
             SqlCommand cmd = new SqlCommand(strSQLUpdate, conn);
 
-            
             cmd.Parameters.AddWithValue("@avmalzemeID", malzeme.AvMalzemeID);
             cmd.Parameters.AddWithValue("@kiyafettipi", malzeme.KiyafetTipi);
             cmd.Parameters.AddWithValue("@kiyafetrengi", malzeme.KiyafetRengi);
@@ -134,8 +132,6 @@ namespace _12._29.Carsamba.WF.DBManager
             DataTable dt = new DataTable();
             da.Fill(dt);
             dgvMalzeme.DataSource = dt;
-
-
         }
     }
 }

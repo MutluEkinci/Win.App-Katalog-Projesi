@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using _12._29.Carsamba.WF.Model;
 
 namespace _12._29.Carsamba.WF.DBManager
 {
     class AvSilahMN
     {
-
         string connstr = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
         SqlConnection conn;
 
@@ -69,12 +69,10 @@ namespace _12._29.Carsamba.WF.DBManager
 
             cmd.Parameters[0].Direction = ParameterDirection.ReturnValue;
 
-
             cmd.ExecuteNonQuery();
             conn.Close();
 
             return cmd.Parameters[0].Value.ToString();
-
         }
 
         public void SilahSil(AvSilah silah)
@@ -122,7 +120,6 @@ namespace _12._29.Carsamba.WF.DBManager
             DataTable dt = new DataTable();
             da.Fill(dt);
             dgvSilah.DataSource = dt;
-            
         }
     }
 }
