@@ -32,9 +32,6 @@ namespace _12._29.Carsamba.WF
             InitializeComponent();
         }
 
-        private void Avcılık_Load(object sender, EventArgs e)
-        {
-        }
         private void btnSilahAra_Click(object sender, EventArgs e)
         {
             picboxSilah.ImageLocation = "";

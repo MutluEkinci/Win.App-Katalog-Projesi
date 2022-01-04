@@ -1364,7 +1364,6 @@ namespace _12._29.Carsamba.WF
             this.Name = "Avcılık";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Avcılık";
-            this.Load += new System.EventHandler(this.Avcılık_Load);
             this.pnlAv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSilahListe)).EndInit();
             this.tabControlAvcılık.ResumeLayout(false);
