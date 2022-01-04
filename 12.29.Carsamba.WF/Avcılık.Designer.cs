@@ -1,7 +1,7 @@
 ﻿
 namespace _12._29.Carsamba.WF
 {
-    partial class Form1
+    partial class Avcılık
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,7 @@ namespace _12._29.Carsamba.WF
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Avcılık));
             this.btnSilahEkle = new System.Windows.Forms.Button();
             this.txtSilahID = new System.Windows.Forms.TextBox();
             this.lblSilahTip = new System.Windows.Forms.Label();
@@ -97,6 +98,13 @@ namespace _12._29.Carsamba.WF
             this.pnlMalzeme = new System.Windows.Forms.Panel();
             this.lblKemerRengi = new System.Windows.Forms.Label();
             this.tabPageEkipman = new System.Windows.Forms.TabPage();
+            this.picBoxEkipmanSilah = new System.Windows.Forms.PictureBox();
+            this.picBoxEkipmanBot = new System.Windows.Forms.PictureBox();
+            this.picBoxEkipmanDurbun = new System.Windows.Forms.PictureBox();
+            this.picBoxEkipmanCanta = new System.Windows.Forms.PictureBox();
+            this.picBoxEkipmanKemer = new System.Windows.Forms.PictureBox();
+            this.picBoxEkipmanSapka = new System.Windows.Forms.PictureBox();
+            this.picBoxEkipmanKiyafet = new System.Windows.Forms.PictureBox();
             this.txtEkipmanMalzemeID = new System.Windows.Forms.TextBox();
             this.txtEkipmanSilahID = new System.Windows.Forms.TextBox();
             this.cmbBoxAvTuru = new System.Windows.Forms.ComboBox();
@@ -112,7 +120,7 @@ namespace _12._29.Carsamba.WF
             this.txtEkipmanSilahFiyat = new System.Windows.Forms.TextBox();
             this.txtEkipmanID = new System.Windows.Forms.TextBox();
             this.lblEkipmanToplamFiyat = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblAvMalzemeFiyat = new System.Windows.Forms.Label();
             this.lblEkipmanMalzemeID = new System.Windows.Forms.Label();
             this.lblEkipmanSilahFiyat = new System.Windows.Forms.Label();
             this.lblEkipmanSilahID = new System.Windows.Forms.Label();
@@ -141,6 +149,13 @@ namespace _12._29.Carsamba.WF
             ((System.ComponentModel.ISupportInitialize)(this.dgvMalzemeListe)).BeginInit();
             this.pnlMalzeme.SuspendLayout();
             this.tabPageEkipman.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxEkipmanSilah)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxEkipmanBot)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxEkipmanDurbun)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxEkipmanCanta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxEkipmanKemer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxEkipmanSapka)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxEkipmanKiyafet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEkipmanListe)).BeginInit();
             this.pnlEkipman.SuspendLayout();
             this.SuspendLayout();
@@ -279,7 +294,7 @@ namespace _12._29.Carsamba.WF
             // 
             // btnSilahSil
             // 
-            this.btnSilahSil.Location = new System.Drawing.Point(3, 0);
+            this.btnSilahSil.Location = new System.Drawing.Point(0, 0);
             this.btnSilahSil.Margin = new System.Windows.Forms.Padding(4);
             this.btnSilahSil.Name = "btnSilahSil";
             this.btnSilahSil.Size = new System.Drawing.Size(115, 25);
@@ -290,7 +305,7 @@ namespace _12._29.Carsamba.WF
             // 
             // btnSilahGuncelle
             // 
-            this.btnSilahGuncelle.Location = new System.Drawing.Point(3, 33);
+            this.btnSilahGuncelle.Location = new System.Drawing.Point(0, 34);
             this.btnSilahGuncelle.Margin = new System.Windows.Forms.Padding(4);
             this.btnSilahGuncelle.Name = "btnSilahGuncelle";
             this.btnSilahGuncelle.Size = new System.Drawing.Size(115, 25);
@@ -320,16 +335,17 @@ namespace _12._29.Carsamba.WF
             this.btnSilahAra.Text = "Silah Ara";
             this.btnSilahAra.UseVisualStyleBackColor = true;
             this.btnSilahAra.Click += new System.EventHandler(this.btnSilahAra_Click);
+            this.btnSilahAra.MouseEnter += new System.EventHandler(this.btnSilahAra_MouseEnter);
             // 
             // pnlAv
             // 
             this.pnlAv.Controls.Add(this.btnSilahGuncelle);
             this.pnlAv.Controls.Add(this.btnSilahSil);
             this.pnlAv.Enabled = false;
-            this.pnlAv.Location = new System.Drawing.Point(603, 66);
+            this.pnlAv.Location = new System.Drawing.Point(605, 66);
             this.pnlAv.Margin = new System.Windows.Forms.Padding(4);
             this.pnlAv.Name = "pnlAv";
-            this.pnlAv.Size = new System.Drawing.Size(123, 58);
+            this.pnlAv.Size = new System.Drawing.Size(115, 58);
             this.pnlAv.TabIndex = 9;
             // 
             // lblMalzemeID
@@ -491,6 +507,7 @@ namespace _12._29.Carsamba.WF
             this.btnMalzemeAra.Text = "Malzeme Ara";
             this.btnMalzemeAra.UseVisualStyleBackColor = true;
             this.btnMalzemeAra.Click += new System.EventHandler(this.btnMalzemeAra_Click);
+            this.btnMalzemeAra.MouseEnter += new System.EventHandler(this.btnMalzemeAra_MouseEnter);
             // 
             // btnMalzemeEkle
             // 
@@ -971,7 +988,7 @@ namespace _12._29.Carsamba.WF
             this.pnlMalzeme.Location = new System.Drawing.Point(917, 73);
             this.pnlMalzeme.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlMalzeme.Name = "pnlMalzeme";
-            this.pnlMalzeme.Size = new System.Drawing.Size(141, 57);
+            this.pnlMalzeme.Size = new System.Drawing.Size(139, 57);
             this.pnlMalzeme.TabIndex = 17;
             // 
             // lblKemerRengi
@@ -986,6 +1003,13 @@ namespace _12._29.Carsamba.WF
             // 
             // tabPageEkipman
             // 
+            this.tabPageEkipman.Controls.Add(this.picBoxEkipmanSilah);
+            this.tabPageEkipman.Controls.Add(this.picBoxEkipmanBot);
+            this.tabPageEkipman.Controls.Add(this.picBoxEkipmanDurbun);
+            this.tabPageEkipman.Controls.Add(this.picBoxEkipmanCanta);
+            this.tabPageEkipman.Controls.Add(this.picBoxEkipmanKemer);
+            this.tabPageEkipman.Controls.Add(this.picBoxEkipmanSapka);
+            this.tabPageEkipman.Controls.Add(this.picBoxEkipmanKiyafet);
             this.tabPageEkipman.Controls.Add(this.txtEkipmanMalzemeID);
             this.tabPageEkipman.Controls.Add(this.txtEkipmanSilahID);
             this.tabPageEkipman.Controls.Add(this.cmbBoxAvTuru);
@@ -999,7 +1023,7 @@ namespace _12._29.Carsamba.WF
             this.tabPageEkipman.Controls.Add(this.txtEkipmanSilahFiyat);
             this.tabPageEkipman.Controls.Add(this.txtEkipmanID);
             this.tabPageEkipman.Controls.Add(this.lblEkipmanToplamFiyat);
-            this.tabPageEkipman.Controls.Add(this.label6);
+            this.tabPageEkipman.Controls.Add(this.lblAvMalzemeFiyat);
             this.tabPageEkipman.Controls.Add(this.lblEkipmanMalzemeID);
             this.tabPageEkipman.Controls.Add(this.lblEkipmanSilahFiyat);
             this.tabPageEkipman.Controls.Add(this.lblEkipmanSilahID);
@@ -1013,6 +1037,76 @@ namespace _12._29.Carsamba.WF
             this.tabPageEkipman.TabIndex = 2;
             this.tabPageEkipman.Text = "Av Ekipmanları";
             this.tabPageEkipman.UseVisualStyleBackColor = true;
+            // 
+            // picBoxEkipmanSilah
+            // 
+            this.picBoxEkipmanSilah.Location = new System.Drawing.Point(742, 46);
+            this.picBoxEkipmanSilah.Margin = new System.Windows.Forms.Padding(4);
+            this.picBoxEkipmanSilah.Name = "picBoxEkipmanSilah";
+            this.picBoxEkipmanSilah.Size = new System.Drawing.Size(336, 101);
+            this.picBoxEkipmanSilah.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxEkipmanSilah.TabIndex = 23;
+            this.picBoxEkipmanSilah.TabStop = false;
+            // 
+            // picBoxEkipmanBot
+            // 
+            this.picBoxEkipmanBot.Location = new System.Drawing.Point(1086, 77);
+            this.picBoxEkipmanBot.Margin = new System.Windows.Forms.Padding(4);
+            this.picBoxEkipmanBot.Name = "picBoxEkipmanBot";
+            this.picBoxEkipmanBot.Size = new System.Drawing.Size(95, 70);
+            this.picBoxEkipmanBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxEkipmanBot.TabIndex = 22;
+            this.picBoxEkipmanBot.TabStop = false;
+            // 
+            // picBoxEkipmanDurbun
+            // 
+            this.picBoxEkipmanDurbun.Location = new System.Drawing.Point(1189, 77);
+            this.picBoxEkipmanDurbun.Margin = new System.Windows.Forms.Padding(4);
+            this.picBoxEkipmanDurbun.Name = "picBoxEkipmanDurbun";
+            this.picBoxEkipmanDurbun.Size = new System.Drawing.Size(95, 70);
+            this.picBoxEkipmanDurbun.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxEkipmanDurbun.TabIndex = 22;
+            this.picBoxEkipmanDurbun.TabStop = false;
+            // 
+            // picBoxEkipmanCanta
+            // 
+            this.picBoxEkipmanCanta.Location = new System.Drawing.Point(1292, 77);
+            this.picBoxEkipmanCanta.Margin = new System.Windows.Forms.Padding(4);
+            this.picBoxEkipmanCanta.Name = "picBoxEkipmanCanta";
+            this.picBoxEkipmanCanta.Size = new System.Drawing.Size(95, 70);
+            this.picBoxEkipmanCanta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxEkipmanCanta.TabIndex = 22;
+            this.picBoxEkipmanCanta.TabStop = false;
+            // 
+            // picBoxEkipmanKemer
+            // 
+            this.picBoxEkipmanKemer.Location = new System.Drawing.Point(1292, 6);
+            this.picBoxEkipmanKemer.Margin = new System.Windows.Forms.Padding(4);
+            this.picBoxEkipmanKemer.Name = "picBoxEkipmanKemer";
+            this.picBoxEkipmanKemer.Size = new System.Drawing.Size(95, 70);
+            this.picBoxEkipmanKemer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxEkipmanKemer.TabIndex = 22;
+            this.picBoxEkipmanKemer.TabStop = false;
+            // 
+            // picBoxEkipmanSapka
+            // 
+            this.picBoxEkipmanSapka.Location = new System.Drawing.Point(1189, 6);
+            this.picBoxEkipmanSapka.Margin = new System.Windows.Forms.Padding(4);
+            this.picBoxEkipmanSapka.Name = "picBoxEkipmanSapka";
+            this.picBoxEkipmanSapka.Size = new System.Drawing.Size(95, 70);
+            this.picBoxEkipmanSapka.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxEkipmanSapka.TabIndex = 22;
+            this.picBoxEkipmanSapka.TabStop = false;
+            // 
+            // picBoxEkipmanKiyafet
+            // 
+            this.picBoxEkipmanKiyafet.Location = new System.Drawing.Point(1086, 6);
+            this.picBoxEkipmanKiyafet.Margin = new System.Windows.Forms.Padding(4);
+            this.picBoxEkipmanKiyafet.Name = "picBoxEkipmanKiyafet";
+            this.picBoxEkipmanKiyafet.Size = new System.Drawing.Size(95, 70);
+            this.picBoxEkipmanKiyafet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxEkipmanKiyafet.TabIndex = 22;
+            this.picBoxEkipmanKiyafet.TabStop = false;
             // 
             // txtEkipmanMalzemeID
             // 
@@ -1125,6 +1219,7 @@ namespace _12._29.Carsamba.WF
             this.btnEkipmanAra.Text = "Ekipman Ara";
             this.btnEkipmanAra.UseVisualStyleBackColor = true;
             this.btnEkipmanAra.Click += new System.EventHandler(this.btnEkipmanAra_Click);
+            this.btnEkipmanAra.MouseEnter += new System.EventHandler(this.btnEkipmanAra_MouseEnter);
             // 
             // txtEkipmanToplamFiyat
             // 
@@ -1133,6 +1228,7 @@ namespace _12._29.Carsamba.WF
             this.txtEkipmanToplamFiyat.Name = "txtEkipmanToplamFiyat";
             this.txtEkipmanToplamFiyat.Size = new System.Drawing.Size(169, 22);
             this.txtEkipmanToplamFiyat.TabIndex = 1;
+            this.txtEkipmanToplamFiyat.Enter += new System.EventHandler(this.txtEkipmanToplamFiyat_Enter);
             // 
             // txtEkipmanMalzemeFiyat
             // 
@@ -1169,15 +1265,15 @@ namespace _12._29.Carsamba.WF
             this.lblEkipmanToplamFiyat.TabIndex = 0;
             this.lblEkipmanToplamFiyat.Text = "Toplam Fiyat:";
             // 
-            // label6
+            // lblAvMalzemeFiyat
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(292, 40);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(122, 17);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Av Malzeme Fiyat:";
+            this.lblAvMalzemeFiyat.AutoSize = true;
+            this.lblAvMalzemeFiyat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAvMalzemeFiyat.Location = new System.Drawing.Point(292, 40);
+            this.lblAvMalzemeFiyat.Name = "lblAvMalzemeFiyat";
+            this.lblAvMalzemeFiyat.Size = new System.Drawing.Size(122, 17);
+            this.lblAvMalzemeFiyat.TabIndex = 0;
+            this.lblAvMalzemeFiyat.Text = "Av Malzeme Fiyat:";
             // 
             // lblEkipmanMalzemeID
             // 
@@ -1257,17 +1353,18 @@ namespace _12._29.Carsamba.WF
             // 
             this.ofdCanta.FileName = "openFileDialog1";
             // 
-            // Form1
+            // Avcılık
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1404, 663);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Form1";
+            this.Name = "Avcılık";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Text = "Avcılık";
+            this.Load += new System.EventHandler(this.Avcılık_Load);
             this.pnlAv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSilahListe)).EndInit();
             this.tabControl1.ResumeLayout(false);
@@ -1286,6 +1383,13 @@ namespace _12._29.Carsamba.WF
             this.pnlMalzeme.ResumeLayout(false);
             this.tabPageEkipman.ResumeLayout(false);
             this.tabPageEkipman.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxEkipmanSilah)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxEkipmanBot)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxEkipmanDurbun)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxEkipmanCanta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxEkipmanKemer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxEkipmanSapka)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxEkipmanKiyafet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEkipmanListe)).EndInit();
             this.pnlEkipman.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1343,7 +1447,7 @@ namespace _12._29.Carsamba.WF
         private System.Windows.Forms.TextBox txtEkipmanSilahFiyat;
         private System.Windows.Forms.TextBox txtEkipmanID;
         private System.Windows.Forms.Label lblEkipmanToplamFiyat;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblAvMalzemeFiyat;
         private System.Windows.Forms.Label lblEkipmanMalzemeID;
         private System.Windows.Forms.Label lblEkipmanSilahFiyat;
         private System.Windows.Forms.Label lblEkipmanSilahID;
@@ -1389,6 +1493,13 @@ namespace _12._29.Carsamba.WF
         private System.Windows.Forms.TextBox txtEkipmanMalzemeID;
         private System.Windows.Forms.TextBox txtEkipmanSilahID;
         private System.Windows.Forms.ToolTip toolTipID;
+        private System.Windows.Forms.PictureBox picBoxEkipmanSilah;
+        private System.Windows.Forms.PictureBox picBoxEkipmanBot;
+        private System.Windows.Forms.PictureBox picBoxEkipmanDurbun;
+        private System.Windows.Forms.PictureBox picBoxEkipmanCanta;
+        private System.Windows.Forms.PictureBox picBoxEkipmanKemer;
+        private System.Windows.Forms.PictureBox picBoxEkipmanSapka;
+        private System.Windows.Forms.PictureBox picBoxEkipmanKiyafet;
     }
 }
 

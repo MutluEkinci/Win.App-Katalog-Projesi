@@ -51,19 +51,19 @@
     <Compile Include="DBManager\AvEkipmanMN.cs" />
     <Compile Include="DBManager\AvMalzemeMN.cs" />
     <Compile Include="DBManager\AvSilahMN.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Avcılık.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Avcılık.Designer.cs">
+      <DependentUpon>Avcılık.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\AvEkipman.cs" />
     <Compile Include="Model\AvMalzeme.cs" />
     <Compile Include="Model\AvSilah.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Avcılık.resx">
+      <DependentUpon>Avcılık.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

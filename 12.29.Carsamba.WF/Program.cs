@@ -16,7 +16,7 @@ namespace _12._29.Carsamba.WF
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Avcılık());
         }
     }
 }

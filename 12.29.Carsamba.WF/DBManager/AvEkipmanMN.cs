@@ -25,7 +25,9 @@ namespace _12._29.Carsamba.WF.DBManager
             string strSQLID = "select*from avekipman where avekipmanID=@id";
 
             SqlCommand cmd = new SqlCommand(strSQLID, conn);
+
             cmd.Parameters.AddWithValue("@id", ID);
+
             SqlDataReader dr = cmd.ExecuteReader();
 
             dr.Read();
