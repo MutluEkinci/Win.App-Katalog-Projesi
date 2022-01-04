@@ -71,12 +71,16 @@ namespace _12._29.Carsamba.WF
             this.dgvSilahListe = new System.Windows.Forms.DataGridView();
             this.tabControlAvcılık = new System.Windows.Forms.TabControl();
             this.tabPageAv = new System.Windows.Forms.TabPage();
+            this.btnSilahFiltrele = new System.Windows.Forms.Button();
+            this.txtSilahFiltrele = new System.Windows.Forms.TextBox();
             this.cmbBoxSilahRengi = new System.Windows.Forms.ComboBox();
             this.cmbBoxMermitipi = new System.Windows.Forms.ComboBox();
             this.cmbBoxSilahAtisModu = new System.Windows.Forms.ComboBox();
             this.cmbBoxSilahTipi = new System.Windows.Forms.ComboBox();
             this.picboxSilah = new System.Windows.Forms.PictureBox();
             this.tabPageMalzeme = new System.Windows.Forms.TabPage();
+            this.btnMalzemeFiltrele = new System.Windows.Forms.Button();
+            this.txtMalzemeFiltrele = new System.Windows.Forms.TextBox();
             this.picBoxSapka = new System.Windows.Forms.PictureBox();
             this.picBoxKemer = new System.Windows.Forms.PictureBox();
             this.picBoxKiyafet = new System.Windows.Forms.PictureBox();
@@ -98,6 +102,8 @@ namespace _12._29.Carsamba.WF
             this.pnlMalzeme = new System.Windows.Forms.Panel();
             this.lblKemerRengi = new System.Windows.Forms.Label();
             this.tabPageEkipman = new System.Windows.Forms.TabPage();
+            this.btnEkipmanFiltrele = new System.Windows.Forms.Button();
+            this.txtEkipmanFiltrele = new System.Windows.Forms.TextBox();
             this.picBoxEkipmanSilah = new System.Windows.Forms.PictureBox();
             this.picBoxEkipmanBot = new System.Windows.Forms.PictureBox();
             this.picBoxEkipmanDurbun = new System.Windows.Forms.PictureBox();
@@ -133,7 +139,7 @@ namespace _12._29.Carsamba.WF
             this.ofdBot = new System.Windows.Forms.OpenFileDialog();
             this.ofdDurbun = new System.Windows.Forms.OpenFileDialog();
             this.ofdCanta = new System.Windows.Forms.OpenFileDialog();
-            this.toolTipID = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipAvcilik = new System.Windows.Forms.ToolTip(this.components);
             this.pnlAv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSilahListe)).BeginInit();
             this.tabControlAvcılık.SuspendLayout();
@@ -558,12 +564,12 @@ namespace _12._29.Carsamba.WF
             this.dgvSilahListe.AllowUserToAddRows = false;
             this.dgvSilahListe.AllowUserToDeleteRows = false;
             this.dgvSilahListe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSilahListe.Location = new System.Drawing.Point(3, 162);
+            this.dgvSilahListe.Location = new System.Drawing.Point(10, 192);
             this.dgvSilahListe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvSilahListe.Name = "dgvSilahListe";
             this.dgvSilahListe.RowHeadersWidth = 51;
             this.dgvSilahListe.RowTemplate.Height = 24;
-            this.dgvSilahListe.Size = new System.Drawing.Size(1384, 465);
+            this.dgvSilahListe.Size = new System.Drawing.Size(1377, 435);
             this.dgvSilahListe.TabIndex = 15;
             // 
             // tabControlAvcılık
@@ -581,6 +587,8 @@ namespace _12._29.Carsamba.WF
             // 
             // tabPageAv
             // 
+            this.tabPageAv.Controls.Add(this.btnSilahFiltrele);
+            this.tabPageAv.Controls.Add(this.txtSilahFiltrele);
             this.tabPageAv.Controls.Add(this.cmbBoxSilahRengi);
             this.tabPageAv.Controls.Add(this.cmbBoxMermitipi);
             this.tabPageAv.Controls.Add(this.cmbBoxSilahAtisModu);
@@ -611,6 +619,24 @@ namespace _12._29.Carsamba.WF
             this.tabPageAv.TabIndex = 0;
             this.tabPageAv.Text = "Av Silahları";
             this.tabPageAv.UseVisualStyleBackColor = true;
+            // 
+            // btnSilahFiltrele
+            // 
+            this.btnSilahFiltrele.Location = new System.Drawing.Point(206, 160);
+            this.btnSilahFiltrele.Name = "btnSilahFiltrele";
+            this.btnSilahFiltrele.Size = new System.Drawing.Size(83, 27);
+            this.btnSilahFiltrele.TabIndex = 22;
+            this.btnSilahFiltrele.Text = "Filtrele";
+            this.btnSilahFiltrele.UseVisualStyleBackColor = true;
+            this.btnSilahFiltrele.Click += new System.EventHandler(this.btnSilahFiltrele_Click);
+            // 
+            // txtSilahFiltrele
+            // 
+            this.txtSilahFiltrele.Location = new System.Drawing.Point(10, 161);
+            this.txtSilahFiltrele.Name = "txtSilahFiltrele";
+            this.txtSilahFiltrele.Size = new System.Drawing.Size(190, 22);
+            this.txtSilahFiltrele.TabIndex = 21;
+            this.txtSilahFiltrele.Enter += new System.EventHandler(this.txtSilahFiltrele_Enter);
             // 
             // cmbBoxSilahRengi
             // 
@@ -682,16 +708,18 @@ namespace _12._29.Carsamba.WF
             // 
             // picboxSilah
             // 
-            this.picboxSilah.Location = new System.Drawing.Point(734, 8);
+            this.picboxSilah.Location = new System.Drawing.Point(734, 6);
             this.picboxSilah.Margin = new System.Windows.Forms.Padding(4);
             this.picboxSilah.Name = "picboxSilah";
-            this.picboxSilah.Size = new System.Drawing.Size(653, 149);
+            this.picboxSilah.Size = new System.Drawing.Size(653, 177);
             this.picboxSilah.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picboxSilah.TabIndex = 16;
             this.picboxSilah.TabStop = false;
             // 
             // tabPageMalzeme
             // 
+            this.tabPageMalzeme.Controls.Add(this.btnMalzemeFiltrele);
+            this.tabPageMalzeme.Controls.Add(this.txtMalzemeFiltrele);
             this.tabPageMalzeme.Controls.Add(this.picBoxSapka);
             this.tabPageMalzeme.Controls.Add(this.picBoxKemer);
             this.tabPageMalzeme.Controls.Add(this.picBoxKiyafet);
@@ -733,14 +761,32 @@ namespace _12._29.Carsamba.WF
             this.tabPageMalzeme.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPageMalzeme.Name = "tabPageMalzeme";
             this.tabPageMalzeme.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPageMalzeme.Size = new System.Drawing.Size(1396, 634);
+            this.tabPageMalzeme.Size = new System.Drawing.Size(1401, 634);
             this.tabPageMalzeme.TabIndex = 1;
             this.tabPageMalzeme.Text = "Av Malzemeleri";
             this.tabPageMalzeme.UseVisualStyleBackColor = true;
             // 
+            // btnMalzemeFiltrele
+            // 
+            this.btnMalzemeFiltrele.Location = new System.Drawing.Point(201, 167);
+            this.btnMalzemeFiltrele.Name = "btnMalzemeFiltrele";
+            this.btnMalzemeFiltrele.Size = new System.Drawing.Size(83, 27);
+            this.btnMalzemeFiltrele.TabIndex = 23;
+            this.btnMalzemeFiltrele.Text = "Filtrele";
+            this.btnMalzemeFiltrele.UseVisualStyleBackColor = true;
+            this.btnMalzemeFiltrele.Click += new System.EventHandler(this.btnMalzemeFiltrele_Click);
+            // 
+            // txtMalzemeFiltrele
+            // 
+            this.txtMalzemeFiltrele.Location = new System.Drawing.Point(10, 169);
+            this.txtMalzemeFiltrele.Name = "txtMalzemeFiltrele";
+            this.txtMalzemeFiltrele.Size = new System.Drawing.Size(185, 22);
+            this.txtMalzemeFiltrele.TabIndex = 22;
+            this.txtMalzemeFiltrele.Enter += new System.EventHandler(this.txtMalzemeFiltrele_Enter);
+            // 
             // picBoxSapka
             // 
-            this.picBoxSapka.Location = new System.Drawing.Point(1180, 14);
+            this.picBoxSapka.Location = new System.Drawing.Point(1179, 25);
             this.picBoxSapka.Margin = new System.Windows.Forms.Padding(4);
             this.picBoxSapka.Name = "picBoxSapka";
             this.picBoxSapka.Size = new System.Drawing.Size(95, 70);
@@ -750,7 +796,7 @@ namespace _12._29.Carsamba.WF
             // 
             // picBoxKemer
             // 
-            this.picBoxKemer.Location = new System.Drawing.Point(1283, 14);
+            this.picBoxKemer.Location = new System.Drawing.Point(1282, 25);
             this.picBoxKemer.Margin = new System.Windows.Forms.Padding(4);
             this.picBoxKemer.Name = "picBoxKemer";
             this.picBoxKemer.Size = new System.Drawing.Size(95, 70);
@@ -760,7 +806,7 @@ namespace _12._29.Carsamba.WF
             // 
             // picBoxKiyafet
             // 
-            this.picBoxKiyafet.Location = new System.Drawing.Point(1077, 14);
+            this.picBoxKiyafet.Location = new System.Drawing.Point(1076, 25);
             this.picBoxKiyafet.Margin = new System.Windows.Forms.Padding(4);
             this.picBoxKiyafet.Name = "picBoxKiyafet";
             this.picBoxKiyafet.Size = new System.Drawing.Size(95, 70);
@@ -770,7 +816,7 @@ namespace _12._29.Carsamba.WF
             // 
             // picBoxDurbun
             // 
-            this.picBoxDurbun.Location = new System.Drawing.Point(1180, 91);
+            this.picBoxDurbun.Location = new System.Drawing.Point(1179, 102);
             this.picBoxDurbun.Margin = new System.Windows.Forms.Padding(4);
             this.picBoxDurbun.Name = "picBoxDurbun";
             this.picBoxDurbun.Size = new System.Drawing.Size(95, 70);
@@ -780,7 +826,7 @@ namespace _12._29.Carsamba.WF
             // 
             // picBoxCanta
             // 
-            this.picBoxCanta.Location = new System.Drawing.Point(1283, 91);
+            this.picBoxCanta.Location = new System.Drawing.Point(1282, 102);
             this.picBoxCanta.Margin = new System.Windows.Forms.Padding(4);
             this.picBoxCanta.Name = "picBoxCanta";
             this.picBoxCanta.Size = new System.Drawing.Size(95, 70);
@@ -790,7 +836,7 @@ namespace _12._29.Carsamba.WF
             // 
             // picBoxBot
             // 
-            this.picBoxBot.Location = new System.Drawing.Point(1077, 91);
+            this.picBoxBot.Location = new System.Drawing.Point(1076, 102);
             this.picBoxBot.Margin = new System.Windows.Forms.Padding(4);
             this.picBoxBot.Name = "picBoxBot";
             this.picBoxBot.Size = new System.Drawing.Size(95, 70);
@@ -972,12 +1018,12 @@ namespace _12._29.Carsamba.WF
             this.dgvMalzemeListe.AllowUserToAddRows = false;
             this.dgvMalzemeListe.AllowUserToDeleteRows = false;
             this.dgvMalzemeListe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMalzemeListe.Location = new System.Drawing.Point(3, 172);
+            this.dgvMalzemeListe.Location = new System.Drawing.Point(10, 200);
             this.dgvMalzemeListe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvMalzemeListe.Name = "dgvMalzemeListe";
             this.dgvMalzemeListe.RowHeadersWidth = 51;
             this.dgvMalzemeListe.RowTemplate.Height = 24;
-            this.dgvMalzemeListe.Size = new System.Drawing.Size(1381, 455);
+            this.dgvMalzemeListe.Size = new System.Drawing.Size(1383, 427);
             this.dgvMalzemeListe.TabIndex = 18;
             // 
             // pnlMalzeme
@@ -1003,6 +1049,8 @@ namespace _12._29.Carsamba.WF
             // 
             // tabPageEkipman
             // 
+            this.tabPageEkipman.Controls.Add(this.btnEkipmanFiltrele);
+            this.tabPageEkipman.Controls.Add(this.txtEkipmanFiltrele);
             this.tabPageEkipman.Controls.Add(this.picBoxEkipmanSilah);
             this.tabPageEkipman.Controls.Add(this.picBoxEkipmanBot);
             this.tabPageEkipman.Controls.Add(this.picBoxEkipmanDurbun);
@@ -1033,10 +1081,28 @@ namespace _12._29.Carsamba.WF
             this.tabPageEkipman.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPageEkipman.Name = "tabPageEkipman";
             this.tabPageEkipman.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPageEkipman.Size = new System.Drawing.Size(1396, 634);
+            this.tabPageEkipman.Size = new System.Drawing.Size(1401, 634);
             this.tabPageEkipman.TabIndex = 2;
             this.tabPageEkipman.Text = "Av Ekipmanları";
             this.tabPageEkipman.UseVisualStyleBackColor = true;
+            // 
+            // btnEkipmanFiltrele
+            // 
+            this.btnEkipmanFiltrele.Location = new System.Drawing.Point(203, 124);
+            this.btnEkipmanFiltrele.Name = "btnEkipmanFiltrele";
+            this.btnEkipmanFiltrele.Size = new System.Drawing.Size(83, 27);
+            this.btnEkipmanFiltrele.TabIndex = 25;
+            this.btnEkipmanFiltrele.Text = "Filtrele";
+            this.btnEkipmanFiltrele.UseVisualStyleBackColor = true;
+            this.btnEkipmanFiltrele.Click += new System.EventHandler(this.btnEkipmanFiltrele_Click);
+            // 
+            // txtEkipmanFiltrele
+            // 
+            this.txtEkipmanFiltrele.Location = new System.Drawing.Point(11, 125);
+            this.txtEkipmanFiltrele.Name = "txtEkipmanFiltrele";
+            this.txtEkipmanFiltrele.Size = new System.Drawing.Size(186, 22);
+            this.txtEkipmanFiltrele.TabIndex = 24;
+            this.txtEkipmanFiltrele.Enter += new System.EventHandler(this.txtEkipmanFiltrele_Enter);
             // 
             // picBoxEkipmanSilah
             // 
@@ -1146,12 +1212,12 @@ namespace _12._29.Carsamba.WF
             this.dgvEkipmanListe.AllowUserToAddRows = false;
             this.dgvEkipmanListe.AllowUserToDeleteRows = false;
             this.dgvEkipmanListe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEkipmanListe.Location = new System.Drawing.Point(11, 153);
+            this.dgvEkipmanListe.Location = new System.Drawing.Point(11, 156);
             this.dgvEkipmanListe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvEkipmanListe.Name = "dgvEkipmanListe";
             this.dgvEkipmanListe.RowHeadersWidth = 51;
             this.dgvEkipmanListe.RowTemplate.Height = 24;
-            this.dgvEkipmanListe.Size = new System.Drawing.Size(1377, 474);
+            this.dgvEkipmanListe.Size = new System.Drawing.Size(1377, 471);
             this.dgvEkipmanListe.TabIndex = 4;
             // 
             // pnlEkipman
@@ -1491,7 +1557,7 @@ namespace _12._29.Carsamba.WF
         private System.Windows.Forms.OpenFileDialog ofdCanta;
         private System.Windows.Forms.TextBox txtEkipmanMalzemeID;
         private System.Windows.Forms.TextBox txtEkipmanSilahID;
-        private System.Windows.Forms.ToolTip toolTipID;
+        private System.Windows.Forms.ToolTip toolTipAvcilik;
         private System.Windows.Forms.PictureBox picBoxEkipmanSilah;
         private System.Windows.Forms.PictureBox picBoxEkipmanBot;
         private System.Windows.Forms.PictureBox picBoxEkipmanDurbun;
@@ -1499,6 +1565,12 @@ namespace _12._29.Carsamba.WF
         private System.Windows.Forms.PictureBox picBoxEkipmanKemer;
         private System.Windows.Forms.PictureBox picBoxEkipmanSapka;
         private System.Windows.Forms.PictureBox picBoxEkipmanKiyafet;
+        private System.Windows.Forms.TextBox txtSilahFiltrele;
+        private System.Windows.Forms.Button btnSilahFiltrele;
+        private System.Windows.Forms.TextBox txtMalzemeFiltrele;
+        private System.Windows.Forms.Button btnMalzemeFiltrele;
+        private System.Windows.Forms.Button btnEkipmanFiltrele;
+        private System.Windows.Forms.TextBox txtEkipmanFiltrele;
     }
 }
 

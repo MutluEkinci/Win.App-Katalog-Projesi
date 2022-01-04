@@ -31,7 +31,7 @@ namespace _12._29.Carsamba.WF
         {
             InitializeComponent();
         }
-
+        
         private void btnSilahAra_Click(object sender, EventArgs e)
         {
             picboxSilah.ImageLocation = "";
@@ -52,8 +52,7 @@ namespace _12._29.Carsamba.WF
 
                     pnlAv.Enabled = true;
 
-                    StreamReader sr = new StreamReader("" + avSilah.AvSilahID + ".bak");
-                    picboxSilah.ImageLocation = sr.ReadLine();
+                    SilahResimOku();
 
                     if (picboxSilah.ImageLocation == "openFileDialog1")
                     {
@@ -88,11 +87,11 @@ namespace _12._29.Carsamba.WF
             avSilah.AvSilahID = int.Parse(mesaj);
 
             MessageBox.Show("Silahın ID'si:" + " " + mesaj, "ID", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
+
             SilahResimEkle();
 
             MessageBox.Show("Silah başarıyla eklendi.", "BAŞARILI", MessageBoxButtons.OK);
-           
+
             SilahTemizle();
         }
 
@@ -145,6 +144,12 @@ namespace _12._29.Carsamba.WF
             sw.Write(ofdResimEkle.FileName);
             sw.Close();
         }
+
+        private void SilahResimOku()
+        {
+            StreamReader sr = new StreamReader("" + avSilah.AvSilahID + ".bak");
+            picboxSilah.ImageLocation = sr.ReadLine();
+        }
         private void SilahTemizle()
         {
             cmbBoxSilahTipi.Text = "";
@@ -187,14 +192,7 @@ namespace _12._29.Carsamba.WF
 
                     pnlMalzeme.Enabled = true;
 
-
-                    StreamReader sr = new StreamReader("" + malzeme.AvMalzemeID + ".bak");
-                    picBoxKiyafet.ImageLocation = sr.ReadLine();
-                    picBoxSapka.ImageLocation = sr.ReadLine();
-                    picBoxKemer.ImageLocation = sr.ReadLine();
-                    picBoxBot.ImageLocation = sr.ReadLine();
-                    picBoxDurbun.ImageLocation = sr.ReadLine();
-                    picBoxCanta.ImageLocation = sr.ReadLine();
+                    MalzemeResimOku();
 
                     if (picBoxKiyafet.ImageLocation == "openFileDialog1" || picBoxSapka.ImageLocation == "openFileDialog1" || picBoxKemer.ImageLocation == "openFileDialog1" || picBoxBot.ImageLocation == "openFileDialog1" || picBoxDurbun.ImageLocation == "openFileDialog1" || picBoxCanta.ImageLocation == "openFileDialog1")
                     {
@@ -213,8 +211,6 @@ namespace _12._29.Carsamba.WF
                 MalzemeTemizle();
             }
         }
-
-
 
         private void btnMalzemeEkle_Click(object sender, EventArgs e)
         {
@@ -291,6 +287,7 @@ namespace _12._29.Carsamba.WF
         {
             Avcilik.AvMalzemeleri.MalzemeListele(dgvMalzemeListe);
         }
+
         private void MalzemeResimEkle()
         {
             MessageBox.Show("Kıyafet için resim seçiniz...");
@@ -316,7 +313,17 @@ namespace _12._29.Carsamba.WF
             sw.WriteLine(ofdCanta.FileName);
 
             sw.Close();
+        }
 
+        private void MalzemeResimOku()
+        {
+            StreamReader sr = new StreamReader("" + malzeme.AvMalzemeID + ".bak");
+            picBoxKiyafet.ImageLocation = sr.ReadLine();
+            picBoxSapka.ImageLocation = sr.ReadLine();
+            picBoxKemer.ImageLocation = sr.ReadLine();
+            picBoxBot.ImageLocation = sr.ReadLine();
+            picBoxDurbun.ImageLocation = sr.ReadLine();
+            picBoxCanta.ImageLocation = sr.ReadLine();
         }
 
         private void MalzemeTemizle()
@@ -353,20 +360,12 @@ namespace _12._29.Carsamba.WF
 
                     pnlEkipman.Enabled = true;
 
-                    StreamReader sr = new StreamReader("" + ekipman.AvSilahID + ".bak");
-                    picBoxEkipmanSilah.ImageLocation = sr.ReadLine();
+                    EkipmanResimOku();
 
                     if (picBoxEkipmanSilah.ImageLocation == "openFileDialog1")
                     {
                         MessageBox.Show("Bu silahın resmini güncelleyiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    sr = new StreamReader("" + ekipman.AvMalzemeID + ".bak");
-                    picBoxEkipmanKiyafet.ImageLocation = sr.ReadLine();
-                    picBoxEkipmanSapka.ImageLocation = sr.ReadLine();
-                    picBoxEkipmanKemer.ImageLocation = sr.ReadLine();
-                    picBoxEkipmanBot.ImageLocation = sr.ReadLine();
-                    picBoxEkipmanDurbun.ImageLocation = sr.ReadLine();
-                    picBoxEkipmanCanta.ImageLocation = sr.ReadLine();
 
                     if (picBoxEkipmanKiyafet.ImageLocation == "openFileDialog1" || picBoxEkipmanSapka.ImageLocation == "openFileDialog1" || picBoxEkipmanKemer.ImageLocation == "openFileDialog1" || picBoxEkipmanBot.ImageLocation == "openFileDialog1" || picBoxEkipmanDurbun.ImageLocation == "openFileDialog1" || picBoxEkipmanCanta.ImageLocation == "openFileDialog1")
                     {
@@ -429,13 +428,13 @@ namespace _12._29.Carsamba.WF
 
             EkipmanTemizle();
             pnlEkipman.Enabled = false;
-
         }
 
         private void btnEkipmanListe_Click(object sender, EventArgs e)
         {
             Avcilik.AvEkipmanlari.EkipmanListele(dgvEkipmanListe);
         }
+
         private void EkipmanTemizle()
         {
             cmbBoxAvTuru.Text = "";
@@ -446,39 +445,83 @@ namespace _12._29.Carsamba.WF
             txtEkipmanToplamFiyat.Clear();
         }
 
+        private void EkipmanResimOku()
+        {
+            StreamReader sr = new StreamReader("" + ekipman.AvSilahID + ".bak");
+            picBoxEkipmanSilah.ImageLocation = sr.ReadLine();
+
+            sr = new StreamReader("" + ekipman.AvMalzemeID + ".bak");
+            picBoxEkipmanKiyafet.ImageLocation = sr.ReadLine();
+            picBoxEkipmanSapka.ImageLocation = sr.ReadLine();
+            picBoxEkipmanKemer.ImageLocation = sr.ReadLine();
+            picBoxEkipmanBot.ImageLocation = sr.ReadLine();
+            picBoxEkipmanDurbun.ImageLocation = sr.ReadLine();
+            picBoxEkipmanCanta.ImageLocation = sr.ReadLine();
+        }
+
+        private void btnMalzemeFiltrele_Click(object sender, EventArgs e)
+        {
+            Avcilik.AvMalzemeleri.MalzemeFiltrele(txtMalzemeFiltrele.Text, dgvMalzemeListe);
+        }
+
+        private void btnEkipmanFiltrele_Click(object sender, EventArgs e)
+        {
+            Avcilik.AvMalzemeleri.MalzemeFiltrele(txtEkipmanFiltrele.Text, dgvEkipmanListe);
+        }
+
+        private void btnSilahFiltrele_Click(object sender, EventArgs e)
+        {
+            Avcilik.AvSilahlari.SilahFiltrele(txtSilahFiltrele.Text, dgvSilahListe);
+        }
+
         private void txtSilahID_Enter(object sender, EventArgs e)
         {
-            toolTipID.Show("Silah eklerken ID girmenize gerek yoktur.", (IWin32Window)sender);
+            toolTipAvcilik.Show("Silah eklerken ID girmenize gerek yoktur.", (IWin32Window)sender);
         }
 
         private void txtMalzemeID_Enter(object sender, EventArgs e)
         {
-            toolTipID.Show("Malzeme eklerken ID girmenize gerek yoktur.", (IWin32Window)sender);
+            toolTipAvcilik.Show("Malzeme eklerken ID girmenize gerek yoktur.", (IWin32Window)sender);
         }
 
         private void txtEkipmanID_Enter(object sender, EventArgs e)
         {
-            toolTipID.Show("Ekipman eklerken ID girmenize gerek yoktur.", (IWin32Window)sender);
+            toolTipAvcilik.Show("Ekipman eklerken ID girmenize gerek yoktur.", (IWin32Window)sender);
         }
 
         private void btnSilahAra_MouseEnter(object sender, EventArgs e)
         {
-            toolTipID.Show("Silah resmini görmek için ID'sini yazarak aratınız.", (IWin32Window)sender);
+            toolTipAvcilik.Show("Silah resmini görmek için ID'sini yazarak aratınız.", (IWin32Window)sender);
         }
 
         private void btnMalzemeAra_MouseEnter(object sender, EventArgs e)
         {
-            toolTipID.Show("Malzemelerin resmini görmek için ID'sini yazarak aratınız.", (IWin32Window)sender);
+            toolTipAvcilik.Show("Malzemelerin resmini görmek için ID'sini yazarak aratınız.", (IWin32Window)sender);
         }
 
         private void btnEkipmanAra_MouseEnter(object sender, EventArgs e)
         {
-            toolTipID.Show("Ekipman resmini görmek için ID'sini yazarak aratınız.", (IWin32Window)sender);
+            toolTipAvcilik.Show("Ekipman resmini görmek için ID'sini yazarak aratınız.", (IWin32Window)sender);
         }
 
         private void txtEkipmanToplamFiyat_Enter(object sender, EventArgs e)
         {
-            toolTipID.Show("Ekipman eklerken Toplam Fiyat girmenize gerek yoktur.", (IWin32Window)sender);
+            toolTipAvcilik.Show("Ekipman eklerken Toplam Fiyat girmenize gerek yoktur.", (IWin32Window)sender);
+        }
+
+        private void txtSilahFiltrele_Enter(object sender, EventArgs e)
+        {
+            toolTipAvcilik.Show("Silah tipine göre filtreleme yapabilirsiniz.", (IWin32Window)sender);
+        }
+
+        private void txtMalzemeFiltrele_Enter(object sender, EventArgs e)
+        {
+            toolTipAvcilik.Show("Kıyafet tipine göre filtreleme yapabilirsiniz.", (IWin32Window)sender);
+        }
+
+        private void txtEkipmanFiltrele_Enter(object sender, EventArgs e)
+        {
+            toolTipAvcilik.Show("Av türüne göre filtreleme yapabilirsiniz.", (IWin32Window)sender);
         }
     }
 }

@@ -109,5 +109,19 @@ namespace _12._29.Carsamba.WF.DBManager
             dgvEkipman.DataSource = dt;
         }
 
+        public void EkipmanFiltrele(string text, DataGridView dgvmalzeme)
+        {
+            conn = new SqlConnection(connstr);
+
+            SqlDataAdapter da = new SqlDataAdapter("select*from avekipman", connstr);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+            dgvmalzeme.DataSource = dt;
+
+            dt.DefaultView.RowFilter = "AvTuru='" + text + "'";
+        }
+
     }
 }

@@ -121,5 +121,19 @@ namespace _12._29.Carsamba.WF.DBManager
             da.Fill(dt);
             dgvSilah.DataSource = dt;
         }
+
+        public void SilahFiltrele(string text, DataGridView dgvsilah)
+        {
+            conn = new SqlConnection(connstr);
+
+            SqlDataAdapter da = new SqlDataAdapter("select*from avsilah", connstr);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+            dgvsilah.DataSource = dt;
+
+            dt.DefaultView.RowFilter = "SilahTipi='" + text + "'";
+        }
     }
 }

@@ -133,5 +133,19 @@ namespace _12._29.Carsamba.WF.DBManager
             da.Fill(dt);
             dgvMalzeme.DataSource = dt;
         }
+
+        public void MalzemeFiltrele(string text,DataGridView dgvmalzeme)
+        {
+            conn = new SqlConnection(connstr);
+
+            SqlDataAdapter da = new SqlDataAdapter("select*from avmalzeme", connstr);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+            dgvmalzeme.DataSource = dt;
+
+            dt.DefaultView.RowFilter = "KiyafetTipi='" + text + "'";
+        }
     }
 }
