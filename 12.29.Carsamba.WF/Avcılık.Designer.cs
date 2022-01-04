@@ -69,7 +69,7 @@ namespace _12._29.Carsamba.WF
             this.btnMalzemeGuncelle = new System.Windows.Forms.Button();
             this.btnMalzemeListele = new System.Windows.Forms.Button();
             this.dgvSilahListe = new System.Windows.Forms.DataGridView();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControlAvcılık = new System.Windows.Forms.TabControl();
             this.tabPageAv = new System.Windows.Forms.TabPage();
             this.cmbBoxSilahRengi = new System.Windows.Forms.ComboBox();
             this.cmbBoxMermitipi = new System.Windows.Forms.ComboBox();
@@ -136,7 +136,7 @@ namespace _12._29.Carsamba.WF
             this.toolTipID = new System.Windows.Forms.ToolTip(this.components);
             this.pnlAv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSilahListe)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            this.tabControlAvcılık.SuspendLayout();
             this.tabPageAv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxSilah)).BeginInit();
             this.tabPageMalzeme.SuspendLayout();
@@ -167,7 +167,7 @@ namespace _12._29.Carsamba.WF
             this.btnSilahEkle.Name = "btnSilahEkle";
             this.btnSilahEkle.Size = new System.Drawing.Size(115, 25);
             this.btnSilahEkle.TabIndex = 2;
-            this.btnSilahEkle.Text = "Silah Ekle";
+            this.btnSilahEkle.Text = "Silahı Ekle";
             this.btnSilahEkle.UseVisualStyleBackColor = true;
             this.btnSilahEkle.Click += new System.EventHandler(this.btnSilahEkle_Click);
             // 
@@ -299,7 +299,7 @@ namespace _12._29.Carsamba.WF
             this.btnSilahSil.Name = "btnSilahSil";
             this.btnSilahSil.Size = new System.Drawing.Size(115, 25);
             this.btnSilahSil.TabIndex = 5;
-            this.btnSilahSil.Text = "Silah Sil";
+            this.btnSilahSil.Text = "Silahı Sil";
             this.btnSilahSil.UseVisualStyleBackColor = true;
             this.btnSilahSil.Click += new System.EventHandler(this.btnSilahSil_Click);
             // 
@@ -310,7 +310,7 @@ namespace _12._29.Carsamba.WF
             this.btnSilahGuncelle.Name = "btnSilahGuncelle";
             this.btnSilahGuncelle.Size = new System.Drawing.Size(115, 25);
             this.btnSilahGuncelle.TabIndex = 6;
-            this.btnSilahGuncelle.Text = "Silah Güncelle";
+            this.btnSilahGuncelle.Text = "Silahı Güncelle";
             this.btnSilahGuncelle.UseVisualStyleBackColor = true;
             this.btnSilahGuncelle.Click += new System.EventHandler(this.btnSilahGuncelle_Click);
             // 
@@ -499,10 +499,10 @@ namespace _12._29.Carsamba.WF
             // 
             // btnMalzemeAra
             // 
-            this.btnMalzemeAra.Location = new System.Drawing.Point(917, 7);
+            this.btnMalzemeAra.Location = new System.Drawing.Point(898, 7);
             this.btnMalzemeAra.Margin = new System.Windows.Forms.Padding(4);
             this.btnMalzemeAra.Name = "btnMalzemeAra";
-            this.btnMalzemeAra.Size = new System.Drawing.Size(139, 25);
+            this.btnMalzemeAra.Size = new System.Drawing.Size(149, 25);
             this.btnMalzemeAra.TabIndex = 14;
             this.btnMalzemeAra.Text = "Malzeme Ara";
             this.btnMalzemeAra.UseVisualStyleBackColor = true;
@@ -511,12 +511,12 @@ namespace _12._29.Carsamba.WF
             // 
             // btnMalzemeEkle
             // 
-            this.btnMalzemeEkle.Location = new System.Drawing.Point(917, 41);
+            this.btnMalzemeEkle.Location = new System.Drawing.Point(898, 41);
             this.btnMalzemeEkle.Margin = new System.Windows.Forms.Padding(4);
             this.btnMalzemeEkle.Name = "btnMalzemeEkle";
-            this.btnMalzemeEkle.Size = new System.Drawing.Size(139, 25);
+            this.btnMalzemeEkle.Size = new System.Drawing.Size(149, 25);
             this.btnMalzemeEkle.TabIndex = 14;
-            this.btnMalzemeEkle.Text = "Malzeme Ekle";
+            this.btnMalzemeEkle.Text = "Malzemeyi Ekle";
             this.btnMalzemeEkle.UseVisualStyleBackColor = true;
             this.btnMalzemeEkle.Click += new System.EventHandler(this.btnMalzemeEkle_Click);
             // 
@@ -525,9 +525,9 @@ namespace _12._29.Carsamba.WF
             this.btnMalzemeSil.Location = new System.Drawing.Point(0, 0);
             this.btnMalzemeSil.Margin = new System.Windows.Forms.Padding(4);
             this.btnMalzemeSil.Name = "btnMalzemeSil";
-            this.btnMalzemeSil.Size = new System.Drawing.Size(139, 25);
+            this.btnMalzemeSil.Size = new System.Drawing.Size(149, 25);
             this.btnMalzemeSil.TabIndex = 14;
-            this.btnMalzemeSil.Text = "Malzeme Sil";
+            this.btnMalzemeSil.Text = "Malzemeyi Sil";
             this.btnMalzemeSil.UseVisualStyleBackColor = true;
             this.btnMalzemeSil.Click += new System.EventHandler(this.btnMalzemeSil_Click);
             // 
@@ -536,18 +536,18 @@ namespace _12._29.Carsamba.WF
             this.btnMalzemeGuncelle.Location = new System.Drawing.Point(0, 31);
             this.btnMalzemeGuncelle.Margin = new System.Windows.Forms.Padding(4);
             this.btnMalzemeGuncelle.Name = "btnMalzemeGuncelle";
-            this.btnMalzemeGuncelle.Size = new System.Drawing.Size(139, 25);
+            this.btnMalzemeGuncelle.Size = new System.Drawing.Size(149, 25);
             this.btnMalzemeGuncelle.TabIndex = 14;
-            this.btnMalzemeGuncelle.Text = "Malzeme Güncelle";
+            this.btnMalzemeGuncelle.Text = "Malzemeyi Güncelle";
             this.btnMalzemeGuncelle.UseVisualStyleBackColor = true;
             this.btnMalzemeGuncelle.Click += new System.EventHandler(this.btnMalzemeGuncelle_Click);
             // 
             // btnMalzemeListele
             // 
-            this.btnMalzemeListele.Location = new System.Drawing.Point(917, 135);
+            this.btnMalzemeListele.Location = new System.Drawing.Point(898, 135);
             this.btnMalzemeListele.Margin = new System.Windows.Forms.Padding(4);
             this.btnMalzemeListele.Name = "btnMalzemeListele";
-            this.btnMalzemeListele.Size = new System.Drawing.Size(139, 25);
+            this.btnMalzemeListele.Size = new System.Drawing.Size(149, 25);
             this.btnMalzemeListele.TabIndex = 14;
             this.btnMalzemeListele.Text = "Malzemeleri Listele";
             this.btnMalzemeListele.UseVisualStyleBackColor = true;
@@ -566,18 +566,18 @@ namespace _12._29.Carsamba.WF
             this.dgvSilahListe.Size = new System.Drawing.Size(1384, 465);
             this.dgvSilahListe.TabIndex = 15;
             // 
-            // tabControl1
+            // tabControlAvcılık
             // 
-            this.tabControl1.Controls.Add(this.tabPageAv);
-            this.tabControl1.Controls.Add(this.tabPageMalzeme);
-            this.tabControl1.Controls.Add(this.tabPageEkipman);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1404, 663);
-            this.tabControl1.TabIndex = 16;
+            this.tabControlAvcılık.Controls.Add(this.tabPageAv);
+            this.tabControlAvcılık.Controls.Add(this.tabPageMalzeme);
+            this.tabControlAvcılık.Controls.Add(this.tabPageEkipman);
+            this.tabControlAvcılık.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlAvcılık.Location = new System.Drawing.Point(0, 0);
+            this.tabControlAvcılık.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabControlAvcılık.Name = "tabControlAvcılık";
+            this.tabControlAvcılık.SelectedIndex = 0;
+            this.tabControlAvcılık.Size = new System.Drawing.Size(1409, 663);
+            this.tabControlAvcılık.TabIndex = 16;
             // 
             // tabPageAv
             // 
@@ -607,7 +607,7 @@ namespace _12._29.Carsamba.WF
             this.tabPageAv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPageAv.Name = "tabPageAv";
             this.tabPageAv.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPageAv.Size = new System.Drawing.Size(1396, 634);
+            this.tabPageAv.Size = new System.Drawing.Size(1401, 634);
             this.tabPageAv.TabIndex = 0;
             this.tabPageAv.Text = "Av Silahları";
             this.tabPageAv.UseVisualStyleBackColor = true;
@@ -985,10 +985,10 @@ namespace _12._29.Carsamba.WF
             this.pnlMalzeme.Controls.Add(this.btnMalzemeSil);
             this.pnlMalzeme.Controls.Add(this.btnMalzemeGuncelle);
             this.pnlMalzeme.Enabled = false;
-            this.pnlMalzeme.Location = new System.Drawing.Point(917, 73);
+            this.pnlMalzeme.Location = new System.Drawing.Point(898, 73);
             this.pnlMalzeme.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlMalzeme.Name = "pnlMalzeme";
-            this.pnlMalzeme.Size = new System.Drawing.Size(139, 57);
+            this.pnlMalzeme.Size = new System.Drawing.Size(149, 57);
             this.pnlMalzeme.TabIndex = 17;
             // 
             // lblKemerRengi
@@ -1172,7 +1172,7 @@ namespace _12._29.Carsamba.WF
             this.btnEkipmanGuncelle.Name = "btnEkipmanGuncelle";
             this.btnEkipmanGuncelle.Size = new System.Drawing.Size(139, 30);
             this.btnEkipmanGuncelle.TabIndex = 2;
-            this.btnEkipmanGuncelle.Text = "Ekipman Güncelle";
+            this.btnEkipmanGuncelle.Text = "Ekipmanı Güncelle";
             this.btnEkipmanGuncelle.UseVisualStyleBackColor = true;
             this.btnEkipmanGuncelle.Click += new System.EventHandler(this.btnEkipmanGuncelle_Click);
             // 
@@ -1183,7 +1183,7 @@ namespace _12._29.Carsamba.WF
             this.btnEkipmanSil.Name = "btnEkipmanSil";
             this.btnEkipmanSil.Size = new System.Drawing.Size(139, 30);
             this.btnEkipmanSil.TabIndex = 2;
-            this.btnEkipmanSil.Text = "Ekipman Sil";
+            this.btnEkipmanSil.Text = "Ekipmanı Sil";
             this.btnEkipmanSil.UseVisualStyleBackColor = true;
             this.btnEkipmanSil.Click += new System.EventHandler(this.btnEkipmanSil_Click);
             // 
@@ -1194,7 +1194,7 @@ namespace _12._29.Carsamba.WF
             this.btnEkipmanListe.Name = "btnEkipmanListe";
             this.btnEkipmanListe.Size = new System.Drawing.Size(139, 30);
             this.btnEkipmanListe.TabIndex = 2;
-            this.btnEkipmanListe.Text = "Ekipman Listele";
+            this.btnEkipmanListe.Text = "Ekipmanları Listele";
             this.btnEkipmanListe.UseVisualStyleBackColor = true;
             this.btnEkipmanListe.Click += new System.EventHandler(this.btnEkipmanListe_Click);
             // 
@@ -1205,7 +1205,7 @@ namespace _12._29.Carsamba.WF
             this.btnEkipmanEkle.Name = "btnEkipmanEkle";
             this.btnEkipmanEkle.Size = new System.Drawing.Size(139, 30);
             this.btnEkipmanEkle.TabIndex = 2;
-            this.btnEkipmanEkle.Text = "Ekipman Ekle";
+            this.btnEkipmanEkle.Text = "Ekipmanı Ekle";
             this.btnEkipmanEkle.UseVisualStyleBackColor = true;
             this.btnEkipmanEkle.Click += new System.EventHandler(this.btnEkipmanEkle_Click);
             // 
@@ -1357,8 +1357,8 @@ namespace _12._29.Carsamba.WF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1404, 663);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(1409, 663);
+            this.Controls.Add(this.tabControlAvcılık);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Avcılık";
@@ -1367,7 +1367,7 @@ namespace _12._29.Carsamba.WF
             this.Load += new System.EventHandler(this.Avcılık_Load);
             this.pnlAv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSilahListe)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            this.tabControlAvcılık.ResumeLayout(false);
             this.tabPageAv.ResumeLayout(false);
             this.tabPageAv.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxSilah)).EndInit();
@@ -1435,7 +1435,7 @@ namespace _12._29.Carsamba.WF
         private System.Windows.Forms.Button btnMalzemeGuncelle;
         private System.Windows.Forms.Button btnMalzemeListele;
         private System.Windows.Forms.DataGridView dgvSilahListe;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabControlAvcılık;
         private System.Windows.Forms.TabPage tabPageAv;
         private System.Windows.Forms.TabPage tabPageMalzeme;
         private System.Windows.Forms.TabPage tabPageEkipman;

@@ -408,6 +408,7 @@ namespace _12._29.Carsamba.WF
         {
             ekipman.AvTuru = cmbBoxAvTuru.Text;
             ekipman.AvSilahID = int.Parse(txtEkipmanSilahID.Text);
+            ekipman.AvSilahFiyat = Convert.ToDecimal(txtEkipmanSilahFiyat.Text);
             ekipman.AvMalzemeID = int.Parse(txtEkipmanMalzemeID.Text);
             ekipman.AvMalzemeFiyat = Convert.ToDecimal(txtEkipmanMalzemeFiyat.Text);
 
