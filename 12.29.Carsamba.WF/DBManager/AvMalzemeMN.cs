@@ -89,11 +89,11 @@ namespace _12._29.Carsamba.WF.DBManager
 
             conn.Open();
 
-            string strSQLDelete = "Delete from avmalzeme where avmalzemeID=@ID";
+            string strSQLDelete = "Delete from avmalzeme where avmalzemeID=@malzemeID";
 
             SqlCommand cmd = new SqlCommand(strSQLDelete, conn);
 
-            cmd.Parameters.AddWithValue("@ID", malzeme.AvMalzemeID);
+            cmd.Parameters.AddWithValue("@malzemeID", malzeme.AvMalzemeID);
 
             cmd.ExecuteNonQuery();
             conn.Close();

@@ -409,7 +409,7 @@ namespace _12._29.Carsamba.WF
                 ekipman.AvEkipmanID = int.Parse(txtEkipmanID.Text);
                 Avcilik.AvEkipmanlari.EkipmanSil(ekipman);
 
-                pnlEkipman.Enabled = true;
+                pnlEkipman.Enabled = false;
             }
         }
 
